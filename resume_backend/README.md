@@ -2,38 +2,38 @@
 
 <h2 align="center">Resume</h2>
 
-### Инструменты разработки
+### Development Tools
 
-**Стек:**
+**Stack:**
 - Python >= 3.8;
 - Django >= 4;
-- Пакеты из файла requirements.txt;
+- Packages from file requirements.txt;
 
-### Разработка
+### Development
 
-##### 1) Клонировать репозиторий
+##### 1) Clone repository
 
     git clone ссылка_сгенерированная_в_вашем_репозитории
 
-##### 2) Создать виртуальное окружение
+##### 2) Create a virtual environment
 
     python -m venv venv
     
-##### 3) Активировать виртуальное окружение
+##### 3) Activate virtual environment
 
-##### 4) Установить зависимости:
+##### 4) Install requirements
 
     pip install -r requirements.txt
 
-##### 5) Выполнить команду для выполнения миграций
+##### 5) Run command to apply migrations
 
     python manage.py migrate
     
-##### 6) Создать суперпользователя
+##### 6) Create superuser
 
     python manage.py createsuperuser
     
-##### 7) Запустить сервер
+##### 7) Start server
 
     python manage.py runserver
 
