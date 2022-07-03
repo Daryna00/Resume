@@ -13,7 +13,7 @@
 
 ##### 1) Clone repository
 
-    git clone ссылка_сгенерированная_в_вашем_репозитории
+    git clone <link generated in your repository>
 
 ##### 2) Create a virtual environment
 
