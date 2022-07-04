@@ -25,7 +25,7 @@
 
     pip install -r requirements.txt
     
-##### 5) Create PostgreSQL database and make file .env.dev
+##### 5) Create PostgreSQL database and make file.env.dev in resume_backend folder
 
     DEBUG=1
     SECRET_KEY=fdsadqw3f32wg<43g3hv$%#@%F$F$$F$F
