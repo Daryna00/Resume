@@ -44,8 +44,8 @@ class MyUserAdmin(UserAdmin):
         ),
         (_('Important dates'), {'fields': ('first_login', 'last_login', 'date_joined')}),
         (_("Additional information"), {"fields": (
-            "phone", "avatar", "get_avatar", "gender", "birthday", "address", "biography",
-            "github", "linkedin",
+            "phone", "avatar", "get_avatar", "birthday", "address", "biography",
+            "github", "linkedin", "facebook"
         )}),
     )
     add_fieldsets = (

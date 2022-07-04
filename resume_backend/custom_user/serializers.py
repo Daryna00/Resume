@@ -12,5 +12,5 @@ class MyUserInfoSerializer(serializers.ModelSerializer):
         model = MyUser
         fields = (
             'first_name', 'last_name', 'middle_name', 'phone', 'avatar', 'address', 'biography',
-            'github', 'linkedin', 'birthday', 'gender'
+            'birthday', 'github', 'linkedin', 'facebook',
         )
