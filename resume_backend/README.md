@@ -25,7 +25,7 @@
 
     pip install -r requirements.txt
     
-##### 5) Make file .env.dev
+##### 5) Create PostgreSQL database and make file .env.dev
 
     DEBUG=1
     SECRET_KEY=fdsadqw3f32wg<43g3hv$%#@%F$F$$F$F
@@ -33,10 +33,10 @@
 
     # Data Base
     POSTGRES_ENGINE=django.db.backends.postgresql_psycopg2
-    POSTGRES_DB=resume_drf
-    POSTGRES_USER=resume_user
-    POSTGRES_PASSWORD=resume_pass
-    POSTGRES_HOST=resume-db
+    POSTGRES_DB=your_db
+    POSTGRES_USER=your_user
+    POSTGRES_PASSWORD=your_password
+    POSTGRES_HOST=your_host
     POSTGRES_PORT=5432
     DATABASE=postgres
 
