@@ -24,16 +24,31 @@
 ##### 4) Install requirements
 
     pip install -r requirements.txt
+    
+##### 5) Make file .env.dev
 
-##### 5) Run command to apply migrations
+    DEBUG=1
+    SECRET_KEY=fdsadqw3f32wg<43g3hv$%#@%F$F$$F$F
+    DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]
+
+    # Data Base
+    POSTGRES_ENGINE=django.db.backends.postgresql_psycopg2
+    POSTGRES_DB=resume_drf
+    POSTGRES_USER=resume_user
+    POSTGRES_PASSWORD=resume_pass
+    POSTGRES_HOST=resume-db
+    POSTGRES_PORT=5432
+    DATABASE=postgres
+
+##### 6) Run command to apply migrations
 
     python manage.py migrate
     
-##### 6) Create superuser
+##### 7) Create superuser
 
     python manage.py createsuperuser
     
-##### 7) Start server
+##### 8) Start server
 
     python manage.py runserver
 
