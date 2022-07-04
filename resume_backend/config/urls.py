@@ -29,6 +29,9 @@ urlpatterns = [
     ),
     path('api/v1/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
+    path('api-auth/', include('rest_framework.urls')),
+
+    path('api/v1/my-profile/', include('custom_user.urls')),
 ]
 
 if settings.DEBUG:
