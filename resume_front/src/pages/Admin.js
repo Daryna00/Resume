@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Registr = () => {
+const Admin = () => {
     return (
         <div>
-            REGISTER
+            Admin page
         </div>
     );
 };
 
-export default Registr;
+export default Admin;
