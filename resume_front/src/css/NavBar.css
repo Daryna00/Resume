@@ -1,0 +1,15 @@
+#logo{
+    font-family: 'Permanent Marker', cursive;
+}
+
+.nav-link{
+    font-family: 'Righteous', cursive;
+    color: white;
+}
+#responsive-navbar-nav{
+    justify-content: right;
+}
+.me-auto {
+    margin-left: auto!important;
+    margin-right: 20px !important;
+}

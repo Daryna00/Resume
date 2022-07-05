@@ -5,13 +5,14 @@ import ResumeStore from "./pages/ResumeStore";
 import Registr from "./pages/Registr";
 import Auth from "./pages/Auth";
 import {
-    ADMIN_ROUTE,
+    ADMIN_ROUTE, AREA_ROUTE,
     AUTHORISATION_ROUTE,
     CATEGORY_ROUTE,
     CREATION_ROUTE,
     REGISTRATION_ROUTE,
     STORE_ROUTE
 } from "./utils/consts";
+import PersonalArea from "./pages/PersonalArea";
 
 export const authRoutes = [
     {
@@ -30,6 +31,10 @@ export const authRoutes = [
         path:STORE_ROUTE,
         Component:ResumeStore
     },
+    {
+        path:AREA_ROUTE,
+        Component:PersonalArea
+    },
 ]
 
 export const publicRoutes = [
@@ -42,7 +47,7 @@ export const publicRoutes = [
         Component:Auth
     },
     {
-        path:CATEGORY_ROUTE + '/:id',
+        path:CATEGORY_ROUTE,
         Component:Category
     },
     {
