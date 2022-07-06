@@ -10,7 +10,6 @@ import {
     REGISTRATION_ROUTE,
     STORE_ROUTE
 } from "../utils/consts";
-import {observe} from "mobx";
 
 const NavBar = () => {
     const user = useContext(Context)
