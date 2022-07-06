@@ -10,7 +10,7 @@
     white-space: nowrap; /* Keeps the content on a single line */
      /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
-    background: linear-gradient(88.28deg,#0094FF 16.83%,#9B8FFE 44.77%,#FF33DE 71.88%,#FF60E6 98.01%);
+    background: linear-gradient(88.28deg, #0b4cd7 16.83%, #4888f8 44.77%, #ffe433 71.88%, #fff260 98.01%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     font-weight: 900;

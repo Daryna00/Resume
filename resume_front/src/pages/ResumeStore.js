@@ -2,7 +2,6 @@ import React from 'react';
 import CarouselBar from "../components/CarouselBar";
 import {Container} from "react-bootstrap";
 import AnimeText from "../components/AnimeText";
-import Footer from "../components/Footer";
 import HowItWork from "../components/HowItWorks";
 
 const ResumeStore = () => {
