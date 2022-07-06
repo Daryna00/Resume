@@ -39,6 +39,14 @@
     POSTGRES_HOST=your_host
     POSTGRES_PORT=5432
     DATABASE=postgres
+    
+    # Email
+    DEFAULT_FROM_EMAIL=your@your.com
+    EMAIL_USE_TLS=True
+    EMAIL_HOST=your_smtp
+    EMAIL_HOST_USER=your@your.com
+    EMAIL_HOST_PASSWORD=pass
+    EMAIL_PORT=587
 
 ##### 6) Run command to apply migrations
 
