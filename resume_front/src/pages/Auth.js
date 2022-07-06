@@ -1,6 +1,7 @@
 import React from 'react';
-import {Button, Form} from "react-bootstrap";
+import {Button, Form, Nav} from "react-bootstrap";
 import '../css/Login.css'
+import {AREA_ROUTE, CATEGORY_ROUTE, REGISTRATION_ROUTE} from "../utils/consts";
 
 const Auth = () => {
     return (
@@ -23,6 +24,12 @@ const Auth = () => {
             <Button variant="primary" className="button-submit" type="submit">
                 Submit
             </Button>
+            <Nav className="mb-3">
+                <Nav.Link href='#'>Forgot password</Nav.Link>
+            </Nav>
+            <Nav className="mb-3">
+                <Nav.Link href={REGISTRATION_ROUTE}>Registration</Nav.Link>
+            </Nav>
         </Form>
     );
 };
