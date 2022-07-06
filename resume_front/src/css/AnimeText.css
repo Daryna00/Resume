@@ -1,4 +1,5 @@
 .textanime p {
+    margin: 200px 0 200px 0;
     text-align: center;
     justify-content: center;
     font-size: 50px;
@@ -9,6 +10,10 @@
     white-space: nowrap; /* Keeps the content on a single line */
      /* Gives that scrolling effect as the typing happens */
     letter-spacing: .15em; /* Adjust as needed */
+    background: linear-gradient(88.28deg,#0094FF 16.83%,#9B8FFE 44.77%,#FF33DE 71.88%,#FF60E6 98.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 900;
     animation:
             typing 3.5s steps(30, end),
             blink-caret .5s step-end infinite;

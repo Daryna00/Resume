@@ -1,0 +1,351 @@
+.css-r4iqjo {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+
+.css-md5jax {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    font-size: 14px;
+    color: rgba(251,47,255,1);
+    font-family: "IBM Plex Mono",monospace;
+    font-weight: 500;
+    margin-bottom: 19px;
+    text-transform: uppercase;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.css-mw93k4 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    color: rgba(255,255,255,1);
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 1.13;
+    margin-bottom: 15px;
+    max-width: 616px;
+    text-align: center;
+}
+.css-ca2gc2 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 500px;
+}
+.css-18jxpe7 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin-bottom: 18px;
+    margin-left: 36px;
+}
+.css-1jpu9op {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono",monospace;
+    font-weight: 300;
+    color: #2CE5AE;
+    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #2CE5AE;
+    margin-right: 16px;
+}
+.css-128y11d {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+}
+.css-so6mbr {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    color: rgba(255,255,255,1);
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.13;
+}
+
+.css-idzr5c {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    color: rgba(255,255,255,1);
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.6);
+}
+.css-12a7v53 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono",monospace;
+    font-weight: 300;
+    color: #41D1FF;
+    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #41D1FF;
+    margin-right: 16px;
+}
+.css-15pwtp8 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-shrink: 0;
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-family: "IBM Plex Mono",monospace;
+    font-weight: 300;
+    color: #F472FF;
+    font-size: 18px;
+    width: 48px;
+    height: 48px;
+    border-radius: 999px;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #F472FF;
+    margin-right: 16px;
+}
+.css-bo9oke {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-top: 32px;
+}
+.css-oc1pyl {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    font-family: Inter,-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto','Oxygen','Ubuntu','Cantarell','Fira Sans','Droid Sans','Helvetica Neue',sans-serif;
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    color: rgba(0,0,0,1);
+    background-color: rgba(89,175,255,1);
+    font-weight: 700;
+    padding-left: 16px;
+    padding-right: 16px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    outline: none;
+    -webkit-text-decoration: none;
+    text-decoration: none;
+    line-height: 1;
+    cursor: pointer;
+    border-radius: 8px;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    background-color: rgba(42,63,251,1);
+    color: rgba(255,255,255,1);
+}
+.css-1560b3 {
+    box-sizing: border-box;
+    margin: 0;
+    min-width: 0;
+    margin-left: 4px;
+    stroke: rgba(0,0,0,1);
+    fill: none;
+}
+.css-oc1pyl svg path {
+    stroke: rgba(255,255,255,1);
+}
+
+
+
+@media screen and (min-width: 768px) {
+    .css-r4iqjo {
+        margin-bottom: 39px;
+    }
+    .css-md5jax {
+        font-size: 16px;
+    }
+    .css-ca2gc2 {
+        max-width: 1116px;
+        padding-left: 68px;
+        padding-right: 68px;
+    }
+    .css-18jxpe7 {
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    .css-1jpu9op {
+        font-size: 24px;
+    }
+    .css-so6mbr {
+        font-size: 20px;
+    }
+    .css-idzr5c {
+        font-size: 14px;
+    }
+    .css-12a7v53 {
+        font-size: 24px;
+    }
+    .css-15pwtp8 {
+        font-size: 24px;
+    }
+    .css-bo9oke {
+        margin-top: 64px;
+    }
+    .css-oc1pyl {
+        font-size: 14px;
+    }
+    .css-oc1pyl {
+        font-size: 14px;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .css-r4iqjo {
+        max-width: 1124px;
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+    .css-mw93k4 {
+        font-size: 40px;
+    }
+    .css-ca2gc2 {
+        flex-direction: row;
+        max-width: 1280px;
+        padding-left: 72px;
+        padding-right: 72px;
+    }
+    .css-1fqo9h4 {
+        margin-top: 150px;
+        margin-bottom: 180px;
+    }
+    .css-so6mbr {
+        font-size: 24px;
+    }
+    .css-idzr5c {
+        font-size: 15px;
+    }
+    .css-oc1pyl {
+        font-size: 15px;
+    }
+    .css-oc1pyl {
+        font-size: 15px;
+    }
+}
