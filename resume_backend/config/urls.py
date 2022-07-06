@@ -33,13 +33,9 @@ urlpatterns = [
     ),
     path('api/v1/redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
 
-    path('api-auth/', include('rest_framework.urls')),
-
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.jwt')),
-
-    # path('api/v1/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    # path('api/v1/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+    path('api/v1/auth/', include('djoser.social.urls')),
 
     path('api/v1/my-profile/', include('custom_user.urls')),
 ]
