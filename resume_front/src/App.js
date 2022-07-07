@@ -21,7 +21,7 @@ const App = () => (
                     <Route exact path='/personal/area' component={PersonalArea} />
                     <Route exact path='/registration' component={Registr} />
                     <Route exact path='/google' component={Google} />
-                    <Route exact path='/activate/:uid/:token' component={Activate} />
+                    <Route exact path='http://localhost:8000/activate/:uid/:token' component={Activate} />
                 </Switch>
             </Layout>
         </Router>
