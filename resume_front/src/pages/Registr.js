@@ -11,19 +11,18 @@ const Registr = ({ signup, isAuthenticated }) => {
     const [accountCreated, setAccountCreated] = useState(false);
     const [formData, setFormData] = useState({
         email: '',
-        password: '',
-        re_password: ''
+        password: ''
     });
 
-    const { email, password, re_password } = formData;
+    const { email, password} = formData;
 
     const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value });
 
     const onSubmit = e => {
         e.preventDefault();
 
-        if (password === re_password) {
-            signup( email, password, re_password);
+        if (password) {
+            signup( email, password);
             setAccountCreated(true);
         }
     };
@@ -54,10 +53,6 @@ const Registr = ({ signup, isAuthenticated }) => {
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
                 <Form.Control type="password" placeholder="Password" name='password' value={password} onChange={e => onChange(e)} minLength='6' required/>
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Label>Password confirmation</Form.Label>
-                <Form.Control type="password" placeholder="Password confirmation" name='re_password' value={re_password} onChange={e => onChange(e)} minLength='6' required/>
             </Form.Group>
             <Button variant="primary" className="button-submit" type="submit">
                 Submit
