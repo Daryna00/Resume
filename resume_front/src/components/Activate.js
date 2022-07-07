@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { verify } from '../actions/auth';
+import '../css/NavBar.css'
 
 const Activate = ({ verify, match }) => {
     const [verified, setVerified] = useState(false);

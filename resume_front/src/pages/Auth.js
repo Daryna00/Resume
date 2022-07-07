@@ -34,7 +34,7 @@ const Auth = ({ login, isAuthenticated }) => {
     };
 
     if (isAuthenticated) {
-        return <Redirect to='/store' />
+        return <Redirect to='/' />
     }
 
     return (

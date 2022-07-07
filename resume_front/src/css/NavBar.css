@@ -14,3 +14,13 @@
     margin-left: auto!important;
     margin-right: 20px !important;
 }
+h1{
+    font-family: 'Righteous', cursive;
+    color: white;
+}
+.btn btn-primary{
+    font-size: 50px;
+    background: linear-gradient(88.28deg, #0b4cd7 16.83%, #4888f8 44.77%, #ffe433 71.88%, #fff260 98.01%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

@@ -5,7 +5,6 @@ import { signup } from '../actions/auth';
 import axios from 'axios';
 import '../css/Login.css'
 import {Button, Form} from "react-bootstrap";
-import {REACT_APP_API_URL} from "../utils/consts";
 
 const Registr = ({ signup, isAuthenticated }) => {
     const [accountCreated, setAccountCreated] = useState(false);
