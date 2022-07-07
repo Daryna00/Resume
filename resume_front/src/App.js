@@ -15,7 +15,7 @@ const App = () => (
         <Router>
             <Layout>
                 <Switch>
-                    <Route exact path='/store' component={ResumeStore} />
+                    <Route exact path='/' component={ResumeStore} />
                     <Route exact path='/authorisation' component={Auth} />
                     <Route exact path='/registration' component={Registr} />
                     <Route exact path='/google' component={Google} />

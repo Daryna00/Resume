@@ -8,14 +8,13 @@ import {
     CATEGORY_ROUTE,
     CREATION_ROUTE,
     REGISTRATION_ROUTE,
-    STORE_ROUTE
 } from "../utils/consts";
 
 const NavBar = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand id='logo' href={STORE_ROUTE}>YOUR RESUME</Navbar.Brand>
+                <Navbar.Brand id='logo' href='/'>YOUR RESUME</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav"/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">

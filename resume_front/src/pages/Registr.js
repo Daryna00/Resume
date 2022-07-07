@@ -48,15 +48,15 @@ const Registr = ({ signup, isAuthenticated }) => {
         <Form className='form-login' onSubmit={e => onSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" value={email} placeholder="Enter email" onChange={e => onChange(e)} required/>
+                <Form.Control type="email" placeholder="Enter email" name='email' value={email} onChange={e => onChange(e)} required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={password} onChange={e => onChange(e)} minLength='6' required/>
+                <Form.Control type="password" placeholder="Password" name='password' value={password} onChange={e => onChange(e)} minLength='6' required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Password confirmation</Form.Label>
-                <Form.Control type="password" placeholder="Password confirmation" value={re_password} onChange={e => onChange(e)} minLength='6' required/>
+                <Form.Control type="password" placeholder="Password confirmation" name='re_password' value={re_password} onChange={e => onChange(e)} minLength='6' required/>
             </Form.Group>
             <Button variant="primary" className="button-submit" type="submit">
                 Submit

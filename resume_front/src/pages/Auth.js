@@ -41,7 +41,7 @@ const Auth = ({ login, isAuthenticated }) => {
         <Form className='form-login'  onSubmit={e => onSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" value={email}
+                <Form.Control type="email" placeholder="Enter email" name="email" value={email}
                               onChange={e => onChange(e)} requird/>
                 <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
@@ -50,7 +50,7 @@ const Auth = ({ login, isAuthenticated }) => {
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" value={email}
+                <Form.Control type="password" placeholder="Password" name="password" value={password}
                               onChange={e => onChange(e)}
                               minLength='6' requird/>
             </Form.Group>
