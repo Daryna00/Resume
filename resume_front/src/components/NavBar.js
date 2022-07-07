@@ -31,10 +31,10 @@ const NavBar = ({logout, isAuthenticated}) => {
     );
 
     const authLinks = () => (
-
         <Nav className="me-auto">
             <Nav.Link href={CATEGORY_ROUTE}>Examples</Nav.Link>
-            <Nav.Link href={AREA_ROUTE}>Login</Nav.Link>
+            <Nav.Link href={AREA_ROUTE}>Personal area</Nav.Link>
+            <Nav.Link className='nav-link' href='#!' onClick={logout_user}>Logout</Nav.Link>
         </Nav>
     );
 
