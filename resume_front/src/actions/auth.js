@@ -177,7 +177,7 @@ export const verify = (uid, token) => async dispatch => {
     const body = JSON.stringify({ uid, token });
 
     try {
-        await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/auth/users/activation/`, body, config);
+        await axios.post(`${process.env.APP_API_URL}/api/v1/auth/users/activation/`, body, config);
 
         dispatch({
             type: ACTIVATION_SUCCESS,
