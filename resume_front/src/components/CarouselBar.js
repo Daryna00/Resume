@@ -1,9 +1,7 @@
-import React, {useContext} from 'react';
-import {Context} from "../index";
+import React from 'react';
 import Carousel from 'react-bootstrap/Carousel'
 
 const CarouselBar = () => {
-    const user = useContext(Context)
     return (
         <Carousel>
             <Carousel.Item interval={1000}>

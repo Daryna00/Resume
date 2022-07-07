@@ -30,3 +30,29 @@
     from, to { border-color: transparent }
     50% { border-color: orange }
 }
+@media(max-width: 1400px) {
+    .textanime p{
+        font-size: 45px!important;
+    }
+}
+
+@media(max-width: 1324px) {
+    .textanime p{
+        font-size: 40px!important;
+    }
+}
+@media(max-width: 1117px) {
+    .textanime p{
+        font-size: 30px!important;
+    }
+}
+@media(max-width: 940px) {
+    .textanime p{
+        font-size: 20px!important;
+    }
+}
+@media(max-width: 500px) {
+    .textanime p{
+        white-space: normal;
+    }
+}
