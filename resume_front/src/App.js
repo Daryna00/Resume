@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 
 import Layout from './hocs/Layout';
+import PersonalArea from "./pages/PersonalArea";
 
 const App = () => (
     <Provider store={store}>
@@ -17,6 +18,7 @@ const App = () => (
                 <Switch>
                     <Route exact path='/' component={ResumeStore} />
                     <Route exact path='/authorisation' component={Auth} />
+                    <Route exact path='/personal/area' component={PersonalArea} />
                     <Route exact path='/registration' component={Registr} />
                     <Route exact path='/google' component={Google} />
                     <Route exact path='/activate/:uid/:token' component={Activate} />
