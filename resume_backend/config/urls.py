@@ -9,7 +9,7 @@ from rest_framework import permissions
 #     TokenObtainPairView,
 #     TokenRefreshView,
 # )
-
+from custom_user.views import get_new_url
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -36,6 +36,7 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.jwt')),
     path('api/v1/auth/', include('djoser.social.urls')),
+    path('activate/<uid>/<token>/', get_new_url),
 
     path('api/v1/my-profile/', include('custom_user.urls')),
 ]

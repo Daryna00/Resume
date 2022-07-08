@@ -1,3 +1,4 @@
+from django.shortcuts import redirect
 from rest_framework import permissions
 from rest_framework.generics import get_object_or_404
 from rest_framework.viewsets import generics
@@ -19,3 +20,20 @@ class MyUserProfileView(generics.RetrieveUpdateAPIView):
         obj = get_object_or_404(self.get_queryset())
         self.check_object_permissions(self.request, obj)
         return obj
+
+
+def get_new_url(request, uid, token, *args, **kwargs):
+    # Specify the port number, you could get this dynamically
+    # through a config file or something if you wish
+    new_port = '3000'
+
+    # `request.get_host()` gives us {hostname}:{port}
+    # we split this by colon to just obtain the hostname
+    hostname = request.get_host().split(':')[0]
+    # Construct the new url to redirect to
+    url = 'http://' + hostname + ':' + new_port + '/' + 'activate/' + uid + '/' + token + '/'
+    print(hostname)
+    print(request.get_host())
+    print(uid)
+    print(token)
+    return redirect(url)
