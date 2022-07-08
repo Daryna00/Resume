@@ -1,0 +1,9 @@
+#btn-primary{
+    --bs-btn-font-size: 30px;
+    width: 500px;
+    background: linear-gradient(88.28deg, #0b4cd7 16.83%, #4888f8 44.77%, #ffe433 71.88%, #fff260 98.01%);
+}
+#activate{
+    margin-top: 20% !important;
+    margin-bottom: 15%;
+}

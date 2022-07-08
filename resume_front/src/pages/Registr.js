@@ -55,11 +55,11 @@ const Registr = ({ signup, isAuthenticated }) => {
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password</Form.Label>
-                <Form.Control type="password" placeholder="Password" name='password' value={password} onChange={e => onChange(e)} minLength='6' required/>
+                <Form.Control type="password" placeholder="Password" name='password' value={password} onChange={e => onChange(e)} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required/>
             </Form.Group>
             <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Password confirmation</Form.Label>
-                <Form.Control type="password" placeholder="Password confirmation" name='re_password' value={re_password} onChange={e => onChange(e)} minLength='6' required/>
+                <Form.Control type="password" placeholder="Password confirmation" name='re_password' value={re_password} onChange={e => onChange(e)} pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required/>
             </Form.Group>
             <Button variant="primary" className="button-submit" type="submit">
                 Submit
