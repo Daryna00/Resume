@@ -64,6 +64,18 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:4200",
 ]
 
+CORS_ORIGIN_WHITELIST = [
+    "http://localhost:8000",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000",
+    "http://127.0.0.1:8080",
+    "http://127.0.0.1:4200",
+    "http://127.0.0.1:3000",
+    "http://localhost:3000",
+    "http://localhost:1313",
+    "http://localhost:4200",
+]
+
 
 MIDDLEWARE = [
     'social_django.middleware.SocialAuthExceptionMiddleware',
@@ -188,7 +200,10 @@ DJOSER = {
     'SERIALIZERS': {},
     'LOGIN_FIELD': 'email',
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
-    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google'],
+    'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': [
+        'http://127.0.0.1:3000/google',
+        'http://localhost:3000/google',
+    ]
 }
 
 
