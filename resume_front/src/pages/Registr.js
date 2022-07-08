@@ -24,6 +24,8 @@ const Registr = ({ signup, isAuthenticated }) => {
         if (password === re_password) {
             signup( email, password);
             setAccountCreated(true);
+        } else {
+            alert('Wrong password! Please try again!')
         }
     };
 
@@ -44,6 +46,7 @@ const Registr = ({ signup, isAuthenticated }) => {
     if (accountCreated) {
         return <Redirect to='/authorisation' />
     }
+
     return (
         <Form className='form-login' onSubmit={e => onSubmit(e)}>
             <Form.Group className="mb-3" controlId="formBasicEmail">

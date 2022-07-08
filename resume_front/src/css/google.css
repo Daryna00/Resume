@@ -1,0 +1,16 @@
+.jumbotron{
+    margin-top: 15rem!important;
+    margin-bottom: 15rem!important;
+}
+.my-4{
+    color: white;
+}
+.lead{
+    color: white;
+}
+#btn-login{
+    --bs-btn-font-size: 30px;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(88.28deg, #0b4cd7 16.83%, #4888f8 44.77%, #ffe433 71.88%, #fff260 98.01%);
+}

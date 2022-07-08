@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { googleAuthenticate } from '../actions/auth';
 import queryString from 'query-string';
+import '../css/google.css'
 
 const Google = ({ googleAuthenticate }) => {
     let location = useLocation();
@@ -27,7 +28,7 @@ const Google = ({ googleAuthenticate }) => {
                 <p class='lead'>This is an incredible authentication system with production level features!</p>
                 <hr class='my-4' />
                 <p>Click the Log In button</p>
-                <Link class='btn btn-primary btn-lg' to='/login' role='button'>Login</Link>
+                <Link class='btn btn-primary btn-lg' id="btn-login" to='/login' role='button'>Login</Link>
             </div>
         </div>
     );
