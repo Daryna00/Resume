@@ -28,7 +28,7 @@ const Google = ({ googleAuthenticate }) => {
                 <p class='lead'>This is an incredible authentication system with production level features!</p>
                 <hr class='my-4' />
                 <p>Click the Log In button</p>
-                <Link class='btn btn-primary btn-lg' id="btn-login" to='/login' role='button'>Login</Link>
+                <Link class='btn btn-primary btn-lg' id="btn-login" to='/personal/area' role='button'>Login</Link>
             </div>
         </div>
     );
