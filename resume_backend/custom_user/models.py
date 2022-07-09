@@ -1,7 +1,10 @@
 from django.contrib.auth.validators import UnicodeUsernameValidator
+from django.core.validators import FileExtensionValidator
 from django.db import models
 from django.utils.translation import gettext_lazy as _
 from django.contrib.auth.models import BaseUserManager, AbstractUser
+
+from .services import get_path_upload_avatar, validate_size_image
 
 
 class CustomUserManager(BaseUserManager):
@@ -60,7 +63,11 @@ class MyUser(AbstractUser):
     )  # Дата подтверждения почты
     phone = models.CharField(max_length=14, blank=True, null=True, verbose_name='Phone')
     avatar = models.ImageField(
-        upload_to='user/avatar/%Y/%m/%d/', blank=True, null=True, verbose_name='Avatar'
+        upload_to=get_path_upload_avatar,
+        blank=True,
+        null=True,
+        validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png']), validate_size_image],
+        verbose_name='Avatar'
     )
     address = models.TextField(blank=True, null=True, verbose_name='Address')
     biography = models.TextField(blank=True, null=True, verbose_name='Biography')

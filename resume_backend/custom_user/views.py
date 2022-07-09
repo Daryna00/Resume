@@ -1,5 +1,5 @@
 from django.shortcuts import redirect
-from rest_framework import permissions
+from rest_framework import permissions, parsers
 from rest_framework.generics import get_object_or_404
 from rest_framework.viewsets import generics
 
@@ -10,6 +10,7 @@ from .serializers import MyUserInfoSerializer
 class MyUserProfileView(generics.RetrieveUpdateAPIView):
     """ View for User profile """
 
+    parser_classes = (parsers.MultiPartParser,)
     serializer_class = MyUserInfoSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -35,4 +36,3 @@ def get_reset_password_url(request, uid, token, *args, **kwargs):
     url = 'http://' + hostname + ':' + new_port + '/' + 'password/reset/confirm/' \
           + uid + '/' + token + '/'
     return redirect(url)
-
