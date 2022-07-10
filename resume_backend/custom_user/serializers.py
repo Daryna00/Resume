@@ -15,5 +15,6 @@ class MyUserInfoSerializer(serializers.ModelSerializer):
         )
 
     def update(self, instance, validated_data):
-        delete_old_avatar(instance.avatar.path)
+        if instance.avatar:
+            delete_old_avatar(instance.avatar.path)
         return super().update(instance, validated_data)
