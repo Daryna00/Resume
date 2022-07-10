@@ -10,7 +10,7 @@ class MyUserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
         fields = (
-            'first_name', 'last_name', 'middle_name', 'phone', 'avatar', 'address',
+            'first_name', 'last_name', 'middle_name', 'nickname', 'phone', 'avatar', 'address',
             'biography', 'birthday', 'github', 'linkedin', 'facebook',
         )
 

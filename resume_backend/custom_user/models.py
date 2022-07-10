@@ -56,7 +56,7 @@ class MyUser(AbstractUser):
         ),
     )
     nickname = models.CharField(
-        max_length=150, blank=True, null=True, verbose_name='Nickname'
+        max_length=150, blank=True, null=True, unique=True, verbose_name='Nickname'
     )
     middle_name = models.CharField(
         max_length=150, blank=True, null=True, verbose_name='Middle name'
