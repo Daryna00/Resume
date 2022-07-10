@@ -55,12 +55,15 @@ class MyUser(AbstractUser):
             "Unselect this instead of deleting accounts."
         ),
     )
+    nickname = models.CharField(
+        max_length=150, blank=True, null=True, verbose_name='Nickname'
+    )
     middle_name = models.CharField(
         max_length=150, blank=True, null=True, verbose_name='Middle name'
     )
     first_login = models.DateTimeField(
-        blank=True, null=True, verbose_name='Email confirmation date'
-    )  # Дата подтверждения почты
+        blank=True, null=True, verbose_name='First login'
+    )
     phone = models.CharField(max_length=14, blank=True, null=True, verbose_name='Phone')
     avatar = models.ImageField(
         upload_to=get_path_upload_avatar,

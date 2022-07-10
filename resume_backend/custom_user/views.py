@@ -1,4 +1,5 @@
 from django.shortcuts import redirect
+from django.utils import timezone
 from rest_framework import permissions, parsers
 from rest_framework.generics import get_object_or_404
 from rest_framework.viewsets import generics
@@ -19,6 +20,9 @@ class MyUserProfileView(generics.RetrieveUpdateAPIView):
 
     def get_object(self):
         obj = get_object_or_404(self.get_queryset())
+        if obj.first_login is None:
+            obj.first_login = timezone.now()
+            obj.save()
         self.check_object_permissions(self.request, obj)
         return obj
 
