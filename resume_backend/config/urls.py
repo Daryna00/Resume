@@ -5,11 +5,7 @@ from django.urls import path, include
 from drf_yasg import openapi
 from drf_yasg.views import get_schema_view
 from rest_framework import permissions
-# from rest_framework_simplejwt.views import (
-#     TokenObtainPairView,
-#     TokenRefreshView,
-# )
-from custom_user.views import get_new_url
+from custom_user.views import get_activation_url, get_reset_password_url
 
 schema_view = get_schema_view(
    openapi.Info(
@@ -36,7 +32,9 @@ urlpatterns = [
     path('api/v1/auth/', include('djoser.urls')),
     path('api/v1/auth/', include('djoser.urls.jwt')),
     path('api/v1/auth/', include('djoser.social.urls')),
-    path('activate/<uid>/<token>/', get_new_url),
+
+    path('activate/<uid>/<token>/', get_activation_url),
+    path('password/reset/confirm/<uid>/<token>/', get_reset_password_url),
 
     path('api/v1/my-profile/', include('custom_user.urls')),
 ]
