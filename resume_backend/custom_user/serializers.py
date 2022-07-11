@@ -10,8 +10,7 @@ class MyUserInfoSerializer(serializers.ModelSerializer):
     class Meta:
         model = MyUser
         fields = (
-            'first_name', 'last_name', 'middle_name', 'nickname', 'phone', 'avatar', 'address',
-            'biography', 'birthday', 'github', 'linkedin', 'facebook',
+            'avatar', 'github', 'linkedin', 'facebook',
         )
 
     def update(self, instance, validated_data):

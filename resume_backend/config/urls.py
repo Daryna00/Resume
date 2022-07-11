@@ -37,6 +37,7 @@ urlpatterns = [
     path('password/reset/confirm/<uid>/<token>/', get_reset_password_url),
 
     path('api/v1/my-profile/', include('custom_user.urls')),
+    path('api/v1/resume/', include('resume.urls')),
 ]
 
 if settings.DEBUG:

@@ -15,21 +15,18 @@ class MyUserAdmin(UserAdmin):
     list_display = (
         "id",
         "email",
-        "phone",
-        "first_name",
-        "last_name",
         "is_active",
         "get_avatar"
     )
     list_display_links = ('id', 'email',)
-    search_fields = ('email', 'first_name', 'last_name',)
+    search_fields = ('email',)
     ordering = ('email',)
     readonly_fields = (
-        'first_login', 'last_login', 'date_joined', 'get_avatar', 'phone',
+        'first_login', 'last_login', 'date_joined', 'get_avatar',
     )
     fieldsets = (
         (None, {"fields": ("email", "password")}),
-        (_("Personal info"), {"fields": ("first_name", "last_name", "middle_name")}),
+        (_("Personal info"), {"fields": ("first_name", "last_name",)}),
         (
             _("Permissions"),
             {
@@ -44,8 +41,7 @@ class MyUserAdmin(UserAdmin):
         ),
         (_('Important dates'), {'fields': ('first_login', 'last_login', 'date_joined')}),
         (_("Additional information"), {"fields": (
-            "phone", "avatar", "get_avatar", "birthday", "address", "biography",
-            "github", "linkedin", "facebook"
+            "avatar", "get_avatar", "github", "linkedin", "facebook"
         )}),
     )
     add_fieldsets = (
