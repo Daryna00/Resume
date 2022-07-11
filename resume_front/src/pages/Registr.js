@@ -31,7 +31,7 @@ const Registr = ({ signup, isAuthenticated }) => {
 
     const continueWithGoogle = async () => {
         try {
-            const res = await axios.get(`${process.env.APP_API_URL}/api/v1/auth/o/google-oauth2/?redirect_uri=${process.env.APP_API_URL}/google`)
+            const res = await axios.get(`${process.env.APP_API_URL}/api/v1/auth/o/google-oauth2/?redirect_uri=${process.env.REACT_APP_API_URL}/google`)
 
             window.location.replace(res.data.authorization_url);
         } catch (err) {
