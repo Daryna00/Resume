@@ -20,7 +20,7 @@ class MyUserAdmin(UserAdmin):
     )
     list_display_links = ('id', 'email',)
     search_fields = ('email',)
-    ordering = ('email',)
+    ordering = ('-id',)
     readonly_fields = (
         'first_login', 'last_login', 'date_joined', 'get_avatar',
     )
