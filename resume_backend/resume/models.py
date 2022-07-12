@@ -31,7 +31,7 @@ class MainInfo(models.Model):
     additional_address_info = models.TextField(
         max_length=500, blank=True, verbose_name='Additional address info'
     )
-    date_of_birth = models.DateField(blank=True, verbose_name='Date of Birth')
+    date_of_birth = models.DateField(blank=True, null=True, verbose_name='Date of Birth')
     vacancy = models.CharField(max_length=250, blank=True, verbose_name='Vacancy')
     about_me = models.TextField(blank=True, verbose_name='About me')
     hobbies = models.TextField(blank=True, verbose_name='Hobbies')
@@ -77,8 +77,8 @@ class EmploymentHistory(models.Model):
     )
     name = models.CharField(max_length=250, blank=True, verbose_name='Name')
     about = models.TextField(blank=True, verbose_name='About')
-    start_date = models.DateField(blank=True, verbose_name='Start date')
-    end_date = models.DateField(blank=True, verbose_name='End date')
+    start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
+    end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
     def __str__(self):
         return f'{self.name}'
@@ -100,8 +100,8 @@ class Education(models.Model):
     )
     name = models.CharField(max_length=350, blank=True, verbose_name='Name')
     about = models.TextField(blank=True, verbose_name='About')
-    start_date = models.DateField(blank=True, verbose_name='Start date')
-    end_date = models.DateField(blank=True, verbose_name='End date')
+    start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
+    end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
     def __str__(self):
         return f'{self.name}'
@@ -122,8 +122,8 @@ class Courses(models.Model):
         verbose_name='User',
     )
     name = models.CharField(max_length=350, blank=True, verbose_name='Name')
-    start_date = models.DateField(blank=True, verbose_name='Start date')
-    end_date = models.DateField(blank=True, verbose_name='End date')
+    start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
+    end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
     def __str__(self):
         return f'{self.name}'

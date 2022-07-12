@@ -6,7 +6,7 @@
 
 **Stack:**
 - Python >= 3.8;
-- Django >= 4;
+- Django >= 3;
 - Packages from file requirements.txt;
 
 ### Development
@@ -25,7 +25,7 @@
 
     pip install -r requirements.txt
     
-##### 5) Create PostgreSQL database and make file.env.dev in resume_backend folder
+##### 5) Create PostgreSQL database and make file .env.dev in resume_backend folder
 
     DEBUG=1
     SECRET_KEY=fdsadqw3f32wg<43g3hv$%#@%F$F$$F$F
@@ -47,6 +47,10 @@
     EMAIL_HOST_USER=your@your.com
     EMAIL_HOST_PASSWORD=pass
     EMAIL_PORT=587
+    
+    # Google login app
+    SOCIAL_AUTH_GOOGLE_OAUTH2_KEY=your_google_key
+    SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET=your_google_secret_key
 
 ##### 6) Run command to apply migrations
 
