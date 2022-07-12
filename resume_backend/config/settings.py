@@ -49,6 +49,7 @@ INSTALLED_APPS = [
     'drf_yasg',
 
     'custom_user.apps.CustomUserConfig',
+    'resume.apps.ResumeConfig',
 ]
 
 

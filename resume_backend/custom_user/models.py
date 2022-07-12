@@ -55,16 +55,9 @@ class MyUser(AbstractUser):
             "Unselect this instead of deleting accounts."
         ),
     )
-    nickname = models.CharField(
-        max_length=150, blank=True, null=True, unique=True, verbose_name='Nickname'
-    )
-    middle_name = models.CharField(
-        max_length=150, blank=True, null=True, verbose_name='Middle name'
-    )
     first_login = models.DateTimeField(
         blank=True, null=True, verbose_name='First login'
     )
-    phone = models.CharField(max_length=14, blank=True, null=True, verbose_name='Phone')
     avatar = models.ImageField(
         upload_to=get_path_upload_avatar,
         blank=True,
@@ -72,8 +65,6 @@ class MyUser(AbstractUser):
         validators=[FileExtensionValidator(allowed_extensions=['jpg', 'png']), validate_size_image],
         verbose_name='Avatar'
     )
-    address = models.TextField(blank=True, null=True, verbose_name='Address')
-    biography = models.TextField(blank=True, null=True, verbose_name='Biography')
     github = models.CharField(
         max_length=150, blank=True, null=True, verbose_name='Link on Github'
     )
@@ -83,7 +74,6 @@ class MyUser(AbstractUser):
     facebook = models.CharField(
         max_length=150, blank=True, null=True, verbose_name='Link on Facebook'
     )
-    birthday = models.DateField(blank=True, null=True, verbose_name='Date of Birth')
 
     objects = CustomUserManager()
 
