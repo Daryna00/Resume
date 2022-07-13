@@ -18,6 +18,7 @@ class MainInfoAdmin(admin.ModelAdmin):
         "hobbies",
     )
     readonly_fields = ("get_photo", )
+    search_fields = ('user', 'first_name', 'last_name')
     save_as = True
     save_on_top = True
 
@@ -36,9 +37,10 @@ class MainInfoAdmin(admin.ModelAdmin):
 class SocialLinkAdmin(admin.ModelAdmin):
     """ Social Link """
 
-    list_display = ("id", "name", "user")
-    list_display_links = ("id", "name")
-    fields = ("name", "link", "user")
+    list_display = ("id", "user", "name")
+    list_display_links = ("id", "user", "name")
+    fields = ("user", "name", "link")
+    search_fields = ('user', 'name')
     save_as = True
     save_on_top = True
 
@@ -47,9 +49,10 @@ class SocialLinkAdmin(admin.ModelAdmin):
 class EmploymentHistoryAdmin(admin.ModelAdmin):
     """ Employment History """
 
-    list_display = ("id", "name", "user")
-    list_display_links = ("id", "name")
-    fields = ("name", "user", "about", "start_date", "end_date")
+    list_display = ("id", "user", "company", "city")
+    list_display_links = ("id", "company", "user")
+    fields = ("user", "company", "vacancy", "city", "about", "start_date", "end_date")
+    search_fields = ('user', 'company', 'city')
     save_as = True
     save_on_top = True
 
@@ -58,9 +61,10 @@ class EmploymentHistoryAdmin(admin.ModelAdmin):
 class EducationAdmin(admin.ModelAdmin):
     """ Education """
 
-    list_display = ("id", "name", "user", "start_date", "end_date")
-    list_display_links = ("id", "name")
-    fields = ("name", "user", "about", "start_date", "end_date")
+    list_display = ("id", "user", "institution", "name", "start_date", "end_date")
+    list_display_links = ("id", "user", "institution")
+    fields = ("user", "institution", "name", "about", "start_date", "end_date")
+    search_fields = ('user', 'institution', 'name')
     save_as = True
     save_on_top = True
 
@@ -69,9 +73,10 @@ class EducationAdmin(admin.ModelAdmin):
 class CoursesAdmin(admin.ModelAdmin):
     """ Courses """
 
-    list_display = ("id", "name", "user", "start_date", "end_date")
-    list_display_links = ("id", "name")
-    fields = ("name", "user", "start_date", "end_date",)
+    list_display = ("id", "user", "company", "name", "start_date", "end_date")
+    list_display_links = ("id", "company")
+    fields = ("user", "company", "name", "start_date", "end_date")
+    search_fields = ('user', 'company', 'name')
     save_as = True
     save_on_top = True
 
@@ -80,9 +85,10 @@ class CoursesAdmin(admin.ModelAdmin):
 class SkillsAdmin(admin.ModelAdmin):
     """ Skills """
 
-    list_display = ("id", "name", "user", "skill")
+    list_display = ("id", "user", "name", "skill")
     list_display_links = ("id", "name")
-    fields = ("name", "user", "skill")
+    fields = ("user", "name", "skill")
+    search_fields = ('user', 'name', 'skill')
     save_as = True
     save_on_top = True
 
@@ -94,6 +100,7 @@ class LanguagesAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "user", "skill")
     list_display_links = ("id", "name")
     fields = ("name", "user", "skill")
+    search_fields = ('user', 'name', 'skill')
     save_as = True
     save_on_top = True
 
@@ -105,5 +112,6 @@ class ResumePDFAdmin(admin.ModelAdmin):
     list_display = ("id", "user", "pdf_file")
     list_display_links = ("id", "user")
     fields = ("user", "pdf_file")
+    search_fields = ('user',)
     save_as = True
     save_on_top = True

@@ -44,7 +44,7 @@ class EmploymentHistorySerializer(BaseSerializer):
 
     class Meta:
         model = models.EmploymentHistory
-        fields = ('id', 'user', 'name', 'about', 'start_date', 'end_date')
+        fields = ('id', 'user', 'company', 'vacancy', 'city', 'about', 'start_date', 'end_date')
         list_serializer_class = EmploymentHistoryListSerializer
 
     def create(self, validated_data):
@@ -64,7 +64,7 @@ class EducationSerializer(BaseSerializer):
 
     class Meta:
         model = models.Education
-        fields = ('id', 'user', 'name', 'about', 'start_date', 'end_date')
+        fields = ('id', 'user', 'institution', 'name', 'about', 'start_date', 'end_date')
         list_serializer_class = EducationListSerializer
 
     def create(self, validated_data):
@@ -84,7 +84,7 @@ class CoursesSerializer(BaseSerializer):
 
     class Meta:
         model = models.Courses
-        fields = ('id', 'user', 'name', 'start_date', 'end_date')
+        fields = ('id', 'user', 'company', 'name', 'start_date', 'end_date')
         list_serializer_class = CoursesListSerializer
 
     def create(self, validated_data):
@@ -165,11 +165,11 @@ class FullUserInfoSerializer(serializers.ModelSerializer):
     user_courses = CoursesSerializer(many=True)
     user_skills = SkillsSerializer(many=True)
     user_languages = LanguagesSerializer(many=True)
-    user_pdf = ResumePDFSerializer(many=True)
+    # user_pdf = ResumePDFSerializer(many=True)
 
     class Meta:
         model = MyUser
         fields = (
             'user_main_info', 'user_links', 'user_employment', 'user_education', 'user_courses',
-            'user_skills', 'user_languages', 'user_pdf'
+            'user_skills', 'user_languages'
         )
