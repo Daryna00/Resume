@@ -1,6 +1,12 @@
 .remove-btn {
     margin-right: 0.5rem;
 }
+.label_skill{
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+}
+
 .list-group-item{
     display: flex!important;
 }
