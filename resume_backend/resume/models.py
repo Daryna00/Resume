@@ -2,7 +2,7 @@ from django.conf import settings
 from django.core.validators import FileExtensionValidator
 from django.db import models
 
-from .services import get_path_upload_photo, validate_size_image
+from .services import get_path_upload_photo, validate_size_image, get_path_upload_pdf
 
 
 class MainInfo(models.Model):
@@ -193,4 +193,30 @@ class Languages(models.Model):
     class Meta:
         verbose_name = 'Language'
         verbose_name_plural = 'Languages'
+        ordering = ['-id']
+
+
+class ResumePDF(models.Model):
+    """ Model for resume PDF files """
+
+    user = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+        related_name='user_pdf',
+        verbose_name='User',
+    )
+    pdf_file = models.FileField(
+        upload_to=get_path_upload_pdf,
+        blank=True,
+        null=True,
+        validators=[FileExtensionValidator(allowed_extensions=['pdf'])],
+        verbose_name='Resume PDF File'
+    )
+
+    def __str__(self):
+        return f'{self.user} - {self.id}'
+
+    class Meta:
+        verbose_name = 'User PDF file'
+        verbose_name_plural = 'User PDF files'
         ordering = ['-id']

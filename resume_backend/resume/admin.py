@@ -1,7 +1,9 @@
 from django.contrib import admin
 from django.utils.safestring import mark_safe
 
-from .models import MainInfo, SocialLink, EmploymentHistory, Education, Courses, Skills, Languages
+from .models import (
+    MainInfo, SocialLink, EmploymentHistory, Education, Courses, Skills, Languages, ResumePDF
+)
 
 
 @admin.register(MainInfo)
@@ -92,5 +94,16 @@ class LanguagesAdmin(admin.ModelAdmin):
     list_display = ("id", "name", "user", "skill")
     list_display_links = ("id", "name")
     fields = ("name", "user", "skill")
+    save_as = True
+    save_on_top = True
+
+
+@admin.register(ResumePDF)
+class ResumePDFAdmin(admin.ModelAdmin):
+    """ Resume PDF """
+
+    list_display = ("id", "user", "pdf_file")
+    list_display_links = ("id", "user")
+    fields = ("user", "pdf_file")
     save_as = True
     save_on_top = True
