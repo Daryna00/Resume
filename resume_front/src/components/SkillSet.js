@@ -13,7 +13,7 @@ import {v4 as uuid} from 'uuid';
 import '../css/transitionGroup.css';
 import Range from "./Range";
 
-function TodoList() {
+function SkillList() {
     const [items, setItems] = useState([
         { id: uuid(), text: 'React' },
         { id: uuid(), text: 'Css' },
@@ -22,6 +22,7 @@ function TodoList() {
     ]);
     return (
         <Container style={{ marginTop: '2rem' }}>
+            <div className="label_skill">Skill set</div>
             <ListGroup style={{ marginBottom: '1rem' }}>
                 <TransitionGroup className="todo-list">
                     {items.map(({ id, text }) => (
@@ -66,4 +67,4 @@ function TodoList() {
     );
 };
 
-export default TodoList;
+export default SkillList;

@@ -9,10 +9,26 @@
 }
 .label{
     color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
 }
 .label01{
     color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
 }
 .col{
     margin: 0 0 20px 0!important;
+}
+.big_label{
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 20px;
+    margin: 0 50% 10% 35%;
+}
+.label_small{
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 17px;
+    margin: 10px 0 0 0;
 }
