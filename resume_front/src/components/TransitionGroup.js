@@ -11,6 +11,7 @@ import {
 import {v4 as uuid} from 'uuid';
 
 import '../css/transitionGroup.css';
+import Range from "./Range";
 
 function TodoList() {
     const [items, setItems] = useState([
@@ -42,7 +43,7 @@ function TodoList() {
                                 >
                                     &times;
                                 </Button>
-                                {text}
+                                {text} <Range/>
                             </ListGroup.Item>
                         </CSSTransition>
                     ))}
@@ -50,7 +51,7 @@ function TodoList() {
             </ListGroup>
             <Button
                 onClick={() => {
-                    const text = prompt('Enter some text');
+                    const text = prompt('Enter your skill.');
                     if (text) {
                         setItems(items => [
                             ...items,

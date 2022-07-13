@@ -1,6 +1,9 @@
 .remove-btn {
     margin-right: 0.5rem;
 }
+.list-group-item{
+    display: flex!important;
+}
 
 .item-enter {
     opacity: 0;
