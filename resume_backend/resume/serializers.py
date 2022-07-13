@@ -84,7 +84,7 @@ class CoursesSerializer(BaseSerializer):
 
     class Meta:
         model = models.Courses
-        fields = ('id', 'user', 'company', 'name', 'start_date', 'end_date')
+        fields = ('id', 'user', 'company', 'name', "about", 'start_date', 'end_date')
         list_serializer_class = CoursesListSerializer
 
     def create(self, validated_data):

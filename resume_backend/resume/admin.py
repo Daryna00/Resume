@@ -75,7 +75,7 @@ class CoursesAdmin(admin.ModelAdmin):
 
     list_display = ("id", "user", "company", "name", "start_date", "end_date")
     list_display_links = ("id", "company")
-    fields = ("user", "company", "name", "start_date", "end_date")
+    fields = ("user", "company", "name", "about", "start_date", "end_date")
     search_fields = ('user', 'company', 'name')
     save_as = True
     save_on_top = True

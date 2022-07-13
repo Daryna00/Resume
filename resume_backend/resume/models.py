@@ -126,6 +126,7 @@ class Courses(models.Model):
     )
     company = models.CharField(max_length=250, blank=True, verbose_name='Company')
     name = models.CharField(max_length=350, blank=True, verbose_name='Name')
+    about = models.TextField(blank=True, verbose_name='About')
     start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
     end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
