@@ -75,13 +75,15 @@ class EmploymentHistory(models.Model):
         related_name='user_employment',
         verbose_name='User',
     )
-    name = models.CharField(max_length=250, blank=True, verbose_name='Name')
+    company = models.CharField(max_length=250, blank=True, verbose_name='Company')
+    vacancy = models.CharField(max_length=250, blank=True, verbose_name='Vacancy')
+    city = models.CharField(max_length=50, blank=True, verbose_name='City')
     about = models.TextField(blank=True, verbose_name='About')
     start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
     end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.company}'
 
     class Meta:
         verbose_name = 'Employment History'
@@ -98,6 +100,7 @@ class Education(models.Model):
         related_name='user_education',
         verbose_name='User',
     )
+    institution = models.CharField(max_length=200, blank=True, verbose_name='Institution')
     name = models.CharField(max_length=350, blank=True, verbose_name='Name')
     about = models.TextField(blank=True, verbose_name='About')
     start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
@@ -121,7 +124,9 @@ class Courses(models.Model):
         related_name='user_courses',
         verbose_name='User',
     )
+    company = models.CharField(max_length=250, blank=True, verbose_name='Company')
     name = models.CharField(max_length=350, blank=True, verbose_name='Name')
+    about = models.TextField(blank=True, verbose_name='About')
     start_date = models.DateField(blank=True, null=True, verbose_name='Start date')
     end_date = models.DateField(blank=True, null=True, verbose_name='End date')
 
@@ -138,11 +143,11 @@ class Skills(models.Model):
     """Skills Model"""
 
     CHOICE_SKILL = (
-        (1, 1),
-        (2, 2),
-        (3, 3),
-        (4, 4),
-        (5, 5),
+        ('novice', 'novice'),
+        ('beginner', 'beginner'),
+        ('skillful', 'skillful'),
+        ('experienced', 'experienced'),
+        ('expert', 'expert'),
     )
 
     user = models.ForeignKey(
@@ -152,9 +157,7 @@ class Skills(models.Model):
         verbose_name='User',
     )
     name = models.CharField(max_length=250, blank=True, verbose_name='Name')
-    skill = models.IntegerField(
-        choices=CHOICE_SKILL, default=1, verbose_name='Skill'
-    )
+    skill = models.CharField(max_length=25, choices=CHOICE_SKILL, default=1, verbose_name='Skill')
 
     def __str__(self):
         return f'{self.name}'
@@ -169,11 +172,11 @@ class Languages(models.Model):
     """Languages Model"""
 
     CHOICE_SKILL = (
-        (1, 1),
-        (2, 2),
-        (3, 3),
-        (4, 4),
-        (5, 5),
+        ('novice', 'novice'),
+        ('beginner', 'beginner'),
+        ('skillful', 'skillful'),
+        ('experienced', 'experienced'),
+        ('expert', 'expert'),
     )
 
     user = models.ForeignKey(
@@ -183,9 +186,7 @@ class Languages(models.Model):
         verbose_name='User',
     )
     name = models.CharField(max_length=100, blank=True, verbose_name='Name')
-    skill = models.IntegerField(
-        choices=CHOICE_SKILL, default=1, verbose_name='Skill'
-    )
+    skill = models.CharField(max_length=25, choices=CHOICE_SKILL, default=1, verbose_name='Skill')
 
     def __str__(self):
         return f'{self.name}'
