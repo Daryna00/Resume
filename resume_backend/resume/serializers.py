@@ -1,4 +1,3 @@
-from django.conf import settings
 from rest_framework import serializers
 
 from custom_user.models import MyUser
@@ -137,13 +136,14 @@ class MainInfoSerializer(BaseSerializer):
     class Meta:
         model = models.MainInfo
         fields = (
-            'user', 'email', 'first_name', 'last_name', 'middle_name', 'phone', 'photo',
+            'id', 'user', 'email', 'first_name', 'last_name', 'middle_name', 'phone', 'photo',
             'country', 'city', 'additional_address_info', 'date_of_birth', 'vacancy', 'about_me',
             'hobbies'
         )
 
     def update(self, instance, validated_data):
-        delete_old_file(instance.photo.path)
+        if instance.photo:
+            delete_old_file(instance.photo.path)
         return super().update(instance, validated_data)
 
 
