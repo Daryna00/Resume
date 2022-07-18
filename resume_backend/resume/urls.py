@@ -23,7 +23,7 @@ urlpatterns = [
     path('languages/<int:pk>/', views.LanguagesRUDView.as_view()),
 
     path('main-info/', views.MainInfoView.as_view({'get': 'list'})),
-    path('main-info/<int:pk>/', views.MainInfoView.as_view({'put': 'update', 'delete': 'destroy'})),
+    path('main-info/<int:pk>/', views.MainInfoView.as_view({'put': 'update'})),
 
     path('full-info/', views.FullUserInfoAPIView.as_view()),
 

@@ -188,10 +188,6 @@ class MainInfoView(viewsets.ModelViewSet):
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
 
-    def perform_destroy(self, instance):
-        delete_old_file(instance.photo.path)
-        instance.delete()
-
 
 class FullUserInfoAPIView(generics.RetrieveAPIView):
     """ Get Full User Info """
