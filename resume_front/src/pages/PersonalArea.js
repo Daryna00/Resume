@@ -4,6 +4,9 @@ import '../css/personal_area.css'
 import SkillList from "../components/SkillSet";
 import LanguageList from "../components/LanguageSet";
 import RainbowDatepicker from "../components/Date";
+import EmploymentHistory from "../components/EmploymentHistory";
+import Education from "../components/Education";
+import Courses from "../components/Courses";
 
 
 
@@ -140,109 +143,22 @@ const PersonalArea = () => {
                     <LanguageList/>
                 </Row>
                 <Row className="mb-34">
-                    <div className="big_label">Employment History</div>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label className='label'>Job title</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            placeholder="Job title"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4">
-                        <Form.Label className='label'>City</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            placeholder="City"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label className='label'>Employer</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Employer"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group className="date" >
-                        <div className="label_small">Start date</div>
-                        <RainbowDatepicker />
-                        <div className="label_small">End date</div>
-                        <RainbowDatepicker/>
-                    </Form.Group>
-                    <Form.Group as={Col} className="mb-34"  >
-                        <Form.Label className='label'>Description</Form.Label>
-                        <Form.Control as="textarea" rows={4}  id="controlTextarea02"/>
-                    </Form.Group>
+                    <div className="big_label_e">Employment History</div>
+                   <EmploymentHistory/>
                 </Row><Row className="mb-34">
-                <div className="big_label">Education</div>
-                <Form.Group as={Col} md="4" >
-                    <Form.Label className='label'>Place of education</Form.Label>
-                    <Form.Control
-                        required
-                        type="text"
-                        placeholder="Place of education"
-                    />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group as={Col} md="4" >
-                    <Form.Label className='label'>Institution</Form.Label>
-                    <Form.Control
-                        type="text"
-                        placeholder="Institution"
-                    />
-                    <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                </Form.Group>
-                <Form.Group className="date" >
-                    <div className="label_small">Start date</div>
-                    <RainbowDatepicker />
-                    <div className="label_small">End date</div>
-                    <RainbowDatepicker/>
-                </Form.Group>
-                <Form.Group as={Col} className="mb-34"  >
-                    <Form.Label className='label'>Description</Form.Label>
-                    <Form.Control as="textarea" rows={4}  id="controlTextarea03"/>
-                </Form.Group>
+                <div className="big_label_ed">Education</div>
+                <Education/>
             </Row>
                 <Row className="mb-34">
-                    <div className="big_label">Courses</div>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label className='label'>Course</Form.Label>
-                        <Form.Control
-                            required
-                            type="text"
-                            placeholder="Course"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group as={Col} md="4" >
-                        <Form.Label className='label'>Institution</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="Institution"
-                        />
-                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-                    </Form.Group>
-                    <Form.Group className="date" >
-                        <div className="label_small">Start date</div>
-                        <RainbowDatepicker />
-                        <div className="label_small">End date</div>
-                        <RainbowDatepicker/>
-                    </Form.Group>
-                    <Form.Group as={Col} className="mb-34"  >
-                        <Form.Label className='label'>Description</Form.Label>
-                        <Form.Control as="textarea" rows={4}  id="controlTextarea"/>
-                    </Form.Group>
+                    <div className="big_label_ed">Courses</div>
+                    <Courses />
                 </Row>
                 <Row className="mb-34">
                     <div className="big_label">URL List</div>
                     <Form.Label htmlFor="basic-url" className='label'>URL</Form.Label>
                     <InputGroup className="col">
                         <InputGroup.Text id="basic-addon3">
-                            https://exsample.com/users/
+                            https://example.com/users/
                         </InputGroup.Text>
                         <FormControl id="basic-url1" aria-describedby="basic-addon3" />
                         <Form.Control.Feedback type="invalid">

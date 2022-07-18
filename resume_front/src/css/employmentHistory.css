@@ -1,0 +1,13 @@
+.btn-success{
+    margin-top: 10px;
+    background: linear-gradient(88.28deg, #0b4cd7 16.83%, #4888f8 44.77%, #ffe433 71.88%, #fff260 98.01%);
+}
+.btn-remove{
+    color: white;
+    background: linear-gradient(88.28deg, #d70b0b 16.83%, #f84848 44.77%, rgba(255, 255, 255, 0.08) 71.88%, rgba(255, 242, 96, 0) 98.01%);
+}
+
+.mb-35{
+    margin-top: 100px!important;
+    width: 100%;
+}

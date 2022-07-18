@@ -26,6 +26,18 @@
     font-size: 20px;
     margin: 0 50% 10% 35%;
 }
+.big_label_e{
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    margin: 0 50% 0 15%;
+}
+.big_label_ed{
+    color: white;
+    font-family: 'Righteous', cursive;
+    font-size: 40px;
+    margin: 0 50% 0 30%;
+}
 .label_small{
     color: white;
     font-family: 'Righteous', cursive;
