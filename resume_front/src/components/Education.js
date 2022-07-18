@@ -34,7 +34,6 @@ function Education() {
                                 <Form.Group as={Col} md="4" >
                                     <Form.Label className='label'>Place of education</Form.Label>
                                     <Form.Control
-                                        required
                                         type="text"
                                         placeholder="Place of education"
                                         onChange={e => inputChange(e, i)}

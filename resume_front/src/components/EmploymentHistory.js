@@ -34,7 +34,6 @@ function EmploymentHistory() {
                                 <Form.Group as={Col} md="4">
                                     <Form.Label className='label'>Job title</Form.Label>
                                     <Form.Control
-                                        required
                                         type="text"
                                         placeholder="Job title"
                                         onChange={e => handleInputChange(e, i)}
@@ -44,7 +43,6 @@ function EmploymentHistory() {
                                 <Form.Group as={Col} md="4">
                                     <Form.Label className='label'>City</Form.Label>
                                     <Form.Control
-                                        required
                                         type="text"
                                         placeholder="City"
                                         onChange={e => handleInputChange(e, i)}

@@ -36,7 +36,6 @@ function SkillList() {
                                     <div className="mb-38">
                                     <Form.Control
                                         className='skill_input'
-                                        required
                                         type="text"
                                         placeholder="Skill"
                                         onChange={e => inputChange(e, i)}
