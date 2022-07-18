@@ -33,7 +33,6 @@ const PersonalArea = () => {
                             required
                             type="text"
                             placeholder="First name"
-                            defaultValue="Mark"
                         />
                         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     </Form.Group>
@@ -43,7 +42,6 @@ const PersonalArea = () => {
                             required
                             type="text"
                             placeholder="Last name"
-                            defaultValue="Otto"
                         />
                         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     </Form.Group>
@@ -52,7 +50,6 @@ const PersonalArea = () => {
                         <Form.Control
                             type="text"
                             placeholder="Middle name"
-                            defaultValue="Oleksandrovich"
                         />
                         <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                     </Form.Group>
@@ -60,7 +57,6 @@ const PersonalArea = () => {
                         <Form.Label className='label'>Wanted Job Title</Form.Label>
                         <Form.Control type="text"
                                       placeholder="Wanted Job Title"
-                                      defaultValue="Web developer"
                         />
                         <Form.Control.Feedback type="invalid">
                             Please provide a valid address.
@@ -70,7 +66,6 @@ const PersonalArea = () => {
                         <Form.Label className='label'>Email</Form.Label>
                         <Form.Control type="text"
                                       placeholder="Email"
-                                      defaultValue="@gmail.com"
                         />
                         <Form.Control.Feedback type="invalid">
                             Please provide a valid address.
