@@ -36,7 +36,6 @@ function LanguageList() {
                                     <div className="mb-38">
                                         <Form.Control
                                             className='skill_input'
-                                            required
                                             type="text"
                                             placeholder="Language skill"
                                             onChange={e => inputChange(e, i)}
