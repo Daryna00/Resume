@@ -30,7 +30,7 @@ export const load_form = () => async dispatch => {
         });
     }
 };
-export const form = (first_name, last_name, middle_name, job_title, city, country, phone, address, email, date_of_birthday, photo, about_me, hobbies) => async dispatch => {
+export const form_save = (first_name, last_name, middle_name, job_title, city, country, phone, address, email, date_of_birthday, photo, about_me, hobbies) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'

@@ -8,11 +8,10 @@ import '../css/personal_area.css'
 // import EmploymentHistory from "../components/EmploymentHistory";
 import RainbowDatepicker from "../components/Date";
 import {connect} from "react-redux";
-import {form} from "../actions/form";
+import {form_save} from "../actions/form";
 
 
-const PersonalArea = (form, isAuthenticated) => {
-    const [validated, setValidated] = useState(false);
+const PersonalArea = ({form}) => {
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -45,12 +44,10 @@ const PersonalArea = (form, isAuthenticated) => {
     } = formData;
     const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
 
-    const handleSubmit = (event) => {
-        const form = event.currentTarget;
-        if (form.checkValidity() === false) {
-            event.preventDefault();
-            event.stopPropagation();
-            form(first_name,
+    const onSubmit = (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        form_save(first_name,
                 last_name,
                 middle_name,
                 job_title,
@@ -63,13 +60,10 @@ const PersonalArea = (form, isAuthenticated) => {
                 photo,
                 about_me,
                 hobbies)
-        }
-
-        setValidated(true);
     };
 
     return (
-        <Form id='formPersonalArea' noValidate validated={validated} onSubmit={handleSubmit} className='form'>
+        <Form id='formPersonalArea' onSubmit={e => onSubmit(e)} className='form'>
             <Row className="mb-34">
                 <div className="big_label">Main information</div>
                 <Form.Group as={Col} md="4">
@@ -78,6 +72,7 @@ const PersonalArea = (form, isAuthenticated) => {
                         required
                         type="text"
                         placeholder="First name"
+                        name="first_name"
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -88,6 +83,7 @@ const PersonalArea = (form, isAuthenticated) => {
                         required
                         type="text"
                         placeholder="Last name"
+                        name="last_name"
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -97,6 +93,7 @@ const PersonalArea = (form, isAuthenticated) => {
                     <Form.Control
                         type="text"
                         placeholder="Middle name"
+                        name="middle_name"
                         value={middle_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -105,6 +102,7 @@ const PersonalArea = (form, isAuthenticated) => {
                     <Form.Label className='label'>Wanted Job Title</Form.Label>
                     <Form.Control type="text"
                                   placeholder="Wanted Job Title"
+                                  name="job_title"
                                   value={job_title} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -115,6 +113,7 @@ const PersonalArea = (form, isAuthenticated) => {
                     <Form.Label className='label'>Email</Form.Label>
                     <Form.Control type="text"
                                   placeholder="Email"
+                                  name="email"
                                   value={email} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -126,6 +125,7 @@ const PersonalArea = (form, isAuthenticated) => {
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>Phone</Form.Label>
                     <Form.Control type="text" placeholder="Phone"
+                                  name="phone"
                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
                                   value={phone} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
@@ -134,54 +134,54 @@ const PersonalArea = (form, isAuthenticated) => {
                 </Form.Group>
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>Address</Form.Label>
-                    <Form.Control type="text" placeholder="Address" value={address} onChange={e => onChange(e)}/>
+                    <Form.Control type="text" placeholder="Address"
+                                  name="address" value={address} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid address.
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>City</Form.Label>
-                    <Form.Control type="text" placeholder="City" value={city} onChange={e => onChange(e)}/>
+                    <Form.Control type="text" placeholder="City" name="city" value={city} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid city.
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="3">
                     <Form.Label className='label'>State</Form.Label>
-                    <Form.Control type="text" placeholder="State" value={country} onChange={e => onChange(e)}/>
+                    <Form.Control type="text" placeholder="State" name="country" value={country} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid state.
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="3">
                     <div className="label_small">Date of birthday</div>
-                    <RainbowDatepicker value={date_of_birthday} onChange={e => onChange(e)}/>
+                    <RainbowDatepicker name="date_of_birthday" value={date_of_birthday} onChange={e => onChange(e)}/>
                 </Form.Group>
                 <Form.Group as={Col} className="position-relative mb-34">
                     <Form.Label className='label'>Your Photo</Form.Label>
                     <Form.Control
                         type="file"
-                        name="file"
+                        name="photo"
                         accept=".png,.jpg"
                         value={photo} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback className='label' type="invalid" tooltip>
                         Please provide a valid photo in jpg or png format less than 5Mg.
                     </Form.Control.Feedback>
-                </Form.Group>\
-
+                </Form.Group>
             </Row>
             <Row className="mb-34">
                 <Form.Group as={Col} className="mb-34">
                     <Form.Label className='label'>Biography</Form.Label>
-                    <Form.Control as="textarea" rows={4} id="controlTextarea00" value={about_me}
+                    <Form.Control as="textarea" rows={4} id="controlTextarea00" name="about_me" value={about_me}
                                   onChange={e => onChange(e)}/>
                 </Form.Group>
             </Row>
             <Row className="mb-34">
                 <Form.Group as={Col} className="mb-34">
                     <Form.Label className='label'>Hobbies</Form.Label>
-                    <Form.Control as="textarea" rows={4} id="controlTextarea01" value={hobbies}
+                    <Form.Control as="textarea" rows={4} id="controlTextarea01" name="hobbies" value={hobbies}
                                   onChange={e => onChange(e)}/>
                 </Form.Group>
                 <Button type="submit">Submit form</Button>
@@ -261,8 +261,7 @@ const PersonalArea = (form, isAuthenticated) => {
         </Form>
     );
 };
-
 const mapStateToProps = state => ({
     isAuthenticated: state.auth.isAuthenticated
 });
-export default connect(mapStateToProps,{ form })(PersonalArea);
+export default connect(mapStateToProps, { form_save })(PersonalArea);
