@@ -14,7 +14,7 @@ export default function RainbowDatepicker() {
             id="datePicker-1"
             value={date}
             onChange={onChange}
-            formatStyle="large"
+            dateFormat="yyyy-MM-dd"
         />
     );
 }

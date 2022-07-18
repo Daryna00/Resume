@@ -55,7 +55,8 @@ export const form_save = (first_name, last_name, middle_name, job_title, city, c
     dispatch(load_form());
     try {
         const id = load_form().map(u => u.id)
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/?${id}`, body, config);
+        console.log(id)
+        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${id}`, body, config);
 
         dispatch({
             type: FORM_SUCCESS,
