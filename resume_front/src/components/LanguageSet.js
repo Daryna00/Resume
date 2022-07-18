@@ -1,70 +1,65 @@
-import React, { useState } from 'react';
-import {
-    Container,
-    ListGroup,
-    Button,
-} from 'react-bootstrap';
-import {
-    CSSTransition,
-    TransitionGroup,
-} from 'react-transition-group';
-import {v4 as uuid} from 'uuid';
-
-import '../css/transitionGroup.css';
 import Range from "./Range";
+import React, {useState} from "react";
+import {Col, Container, Form, Row} from "react-bootstrap";
+import '../css/employmentHistory.css'
 
 function LanguageList() {
-    const [items, setItems] = useState([
-        { id: uuid(), text: 'English' },
-        { id: uuid(), text: 'German' },
-        { id: uuid(), text: 'Ukrainian' },
-        { id: uuid(), text: 'Polish' },
-    ]);
+    const [inputList, setInputList] = useState([{skillLanguage: '', range: ''}]);
+
+    const inputChange = (e, index) => {
+        const {name, value} = e.target;
+        const list = [...inputList];
+        list[index][name] = value;
+        setInputList(list);
+
+    }
+
+    const handleRemove = index => {
+        const list = [...inputList];
+        list.splice(index, 1);
+        setInputList(list);
+    }
+
+    const addClick = () => {
+        setInputList([...inputList, {skillLanguage: '', range: ''}]);
+    }
     return (
-        <Container style={{ marginTop: '2rem' }}>
-            <div className="label_skill">Language set</div>
-            <ListGroup style={{ marginBottom: '1rem' }}>
-                <TransitionGroup className="todo-list">
-                    {items.map(({ id, text }) => (
-                        <CSSTransition
-                            key={id}
-                            timeout={500}
-                            classNames="item"
-                        >
-                            <ListGroup.Item>
-                                <Button
-                                    className="remove-btn"
-                                    variant="danger"
-                                    size="sm"
-                                    onClick={() =>
-                                        setItems(items =>
-                                            items.filter(item => item.id !== id)
-                                        )
-                                    }
-                                >
-                                    &times;
-                                </Button>
-                                {text} <Range/>
-                            </ListGroup.Item>
-                        </CSSTransition>
-                    ))}
-                </TransitionGroup>
-            </ListGroup>
-            <Button
-                onClick={() => {
-                    const text = prompt('Enter your skill.');
-                    if (text) {
-                        setItems(items => [
-                            ...items,
-                            { id: uuid(), text },
-                        ]);
-                    }
-                }}
-            >
-                Add Item
-            </Button>
+        <Container className="content">
+            <div className="row">
+
+                {
+                    inputList.map((x, i) => {
+                        return (
+                            <Row className="mb-37">
+                                <Form.Group as={Col} md="4" className="mb-37" >
+                                    <Form.Label className='label'>Language set</Form.Label>
+                                    <div className="mb-38">
+                                        <Form.Control
+                                            className='skill_input'
+                                            required
+                                            type="text"
+                                            placeholder="Language skill"
+                                            onChange={e => inputChange(e, i)}
+                                        />
+                                        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
+                                        <Range onChange={e => inputChange(e, i)}/>
+                                        {
+                                            inputList.length !== 1 &&
+                                            <button className="btn btn-remove"
+                                                    onClick={() => handleRemove(i)}>Remove</button>
+                                        }
+                                    </div>
+                                </Form.Group>
+                                {
+                                    inputList.length - 1 === i &&
+                                    <button className="btn btn-success" onClick={addClick}>Add More</button>
+                                }
+                            </Row>
+                        );
+                    })}
+            </div>
         </Container>
     );
-};
+}
 
 export default LanguageList;

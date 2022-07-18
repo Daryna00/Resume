@@ -4,24 +4,24 @@ import RainbowDatepicker from "./Date";
 import '../css/employmentHistory.css'
 
 function EmploymentHistory() {
-    const [inputList, setinputList] = useState([{jobTitle: '', city: '', employer:'', startDate:'',  endDate:'', description:''}]);
+    const [inputList, setList] = useState([{jobTitle: '', city: '', employer:'', startDate:'',  endDate:'', description:''}]);
 
-    const handleinputchange = (e, index) => {
+    const handleInputChange = (e, index) => {
         const {name, value} = e.target;
         const list = [...inputList];
         list[index][name] = value;
-        setinputList(list);
+        setList(list);
 
     }
 
-    const handleremove = index => {
+    const handleRemove = index => {
         const list = [...inputList];
         list.splice(index, 1);
-        setinputList(list);
+        setList(list);
     }
 
-    const handleaddclick = () => {
-        setinputList([...inputList, {jobTitle: '', city: '', employer:'',  startDate:'',  endDate:'', description:''}]);
+    const handleAddClick = () => {
+        setList([...inputList, {jobTitle: '', city: '', employer:'',  startDate:'',  endDate:'', description:''}]);
     }
     return (
         <Container className="content">
@@ -37,7 +37,7 @@ function EmploymentHistory() {
                                         required
                                         type="text"
                                         placeholder="Job title"
-                                        onChange={e => handleinputchange(e, i)}
+                                        onChange={e => handleInputChange(e, i)}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
@@ -47,7 +47,7 @@ function EmploymentHistory() {
                                         required
                                         type="text"
                                         placeholder="City"
-                                        onChange={e => handleinputchange(e, i)}
+                                        onChange={e => handleInputChange(e, i)}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
@@ -56,29 +56,29 @@ function EmploymentHistory() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Employer"
-                                        onChange={e => handleinputchange(e, i)}
+                                        onChange={e => handleInputChange(e, i)}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="date">
                                     <div className="label_small">Start date</div>
-                                    <RainbowDatepicker onChange={e => handleinputchange(e, i)}/>
+                                    <RainbowDatepicker onChange={e => handleInputChange(e, i)}/>
                                     <div className="label_small">End date</div>
-                                    <RainbowDatepicker onChange={e => handleinputchange(e, i)}/>
+                                    <RainbowDatepicker onChange={e => handleInputChange(e, i)}/>
                                 </Form.Group>
                                 <Form.Group as={Col} className="mb-34">
                                     <Form.Label className='label'>Description</Form.Label>
                                     <Form.Control as="textarea" rows={4} id="controlTextarea02"
-                                                  onChange={e => handleinputchange(e, i)}/>
+                                                  onChange={e => handleInputChange(e, i)}/>
                                 </Form.Group>
                                 {
                                     inputList.length !== 1 &&
                                     <button className="btn btn-remove"
-                                            onClick={() => handleremove(i)}>Remove</button>
+                                            onClick={() => handleRemove(i)}>Remove</button>
                                 }
                                 {
                                     inputList.length - 1 === i &&
-                                    <button className="btn btn-success" onClick={handleaddclick}>Add More</button>
+                                    <button className="btn btn-success" onClick={handleAddClick}>Add More</button>
                                 }
                             </Row>
                         );

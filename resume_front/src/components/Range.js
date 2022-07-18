@@ -34,12 +34,10 @@ const opts = [
 ];
 
 const fontStyling = {
-    textTransform: 'uppercase',
     fontWeight: 'bold',
-    fontSize: '1vw',
     letterSpacing: '0.05em',
     fontFamily: 'Bebas Neue, sans-serif',
-    margin: '0 0 0 auto',
+    margin: '3px 0 0 5px',
 };
 
 // Usage

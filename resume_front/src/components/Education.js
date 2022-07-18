@@ -4,24 +4,24 @@ import RainbowDatepicker from "./Date";
 import '../css/employmentHistory.css'
 
 function Education() {
-    const [inputList, setinputList] = useState([{place: '', institution: '', startDate:'',  endDate:'', description:''}]);
+    const [inputList, setListInput] = useState([{place: '', institution: '', startDate:'',  endDate:'', description:''}]);
 
-    const handleinputchange = (e, index) => {
+    const inputChange = (e, index) => {
         const {name, value} = e.target;
         const list = [...inputList];
         list[index][name] = value;
-        setinputList(list);
+        setListInput(list);
 
     }
 
-    const handleremove = index => {
+    const remove = index => {
         const list = [...inputList];
         list.splice(index, 1);
-        setinputList(list);
+        setListInput(list);
     }
 
-    const handleaddclick = () => {
-        setinputList([...inputList, {place: '', institution: '', startDate:'',  endDate:'', description:''}]);
+    const addClick = () => {
+        setListInput([...inputList, {place: '', institution: '', startDate:'',  endDate:'', description:''}]);
     }
     return (
         <Container className="content">
@@ -37,7 +37,7 @@ function Education() {
                                         required
                                         type="text"
                                         placeholder="Place of education"
-                                        onChange={e => handleinputchange(e, i)}
+                                        onChange={e => inputChange(e, i)}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
@@ -46,29 +46,29 @@ function Education() {
                                     <Form.Control
                                         type="text"
                                         placeholder="Institution"
-                                        onChange={e => handleinputchange(e, i)}
+                                        onChange={e => inputChange(e, i)}
                                     />
                                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                                 </Form.Group>
                                 <Form.Group className="date" >
                                     <div className="label_small">Start date</div>
-                                    <RainbowDatepicker onChange={e => handleinputchange(e, i)}/>
+                                    <RainbowDatepicker onChange={e => inputChange(e, i)}/>
                                     <div className="label_small">End date</div>
-                                    <RainbowDatepicker onChange={e => handleinputchange(e, i)}/>
+                                    <RainbowDatepicker onChange={e => inputChange(e, i)}/>
                                 </Form.Group>
                                 <Form.Group as={Col} className="mb-34"  >
                                     <Form.Label className='label'>Description</Form.Label>
-                                    <Form.Control as="textarea" rows={4}  id="controlTextarea03" onChange={e => handleinputchange(e, i)}/>
+                                    <Form.Control as="textarea" rows={4}  id="controlTextarea03" onChange={e => inputChange(e, i)}/>
                                 </Form.Group>
 
                                 {
                                     inputList.length !== 1 &&
                                     <button className="btn btn-remove"
-                                            onClick={() => handleremove(i)}>Remove</button>
+                                            onClick={() => remove(i)}>Remove</button>
                                 }
                                 {
                                     inputList.length - 1 === i &&
-                                    <button className="btn btn-success" onClick={handleaddclick}>Add More</button>
+                                    <button className="btn btn-success" onClick={addClick}>Add More</button>
                                 }
                             </Row>
                         );
