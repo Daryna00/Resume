@@ -17,7 +17,7 @@ import {
     GOOGLE_AUTH_FAIL,
     FACEBOOK_AUTH_SUCCESS,
     FACEBOOK_AUTH_FAIL,
-    LOGOUT
+    LOGOUT, FORM_ERROR, FORM_SUCCESS
 } from '../actions/types';
 
 const initialState = {
@@ -85,6 +85,8 @@ export default function(state = initialState, action) {
         case PASSWORD_RESET_FAIL:
         case PASSWORD_RESET_CONFIRM_SUCCESS:
         case PASSWORD_RESET_CONFIRM_FAIL:
+        case FORM_ERROR:
+        case FORM_SUCCESS:
         case ACTIVATION_SUCCESS:
         case ACTIVATION_FAIL:
             return {
