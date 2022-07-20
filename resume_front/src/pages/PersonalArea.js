@@ -46,7 +46,7 @@ const PersonalArea = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        axios.post(url, {
+        axios.put(url, {
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
