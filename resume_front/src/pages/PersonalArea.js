@@ -7,59 +7,63 @@ import '../css/personal_area.css'
 // import Courses from "../components/Courses";
 // import EmploymentHistory from "../components/EmploymentHistory";
 import RainbowDatepicker from "../components/Date";
-import {connect} from "react-redux";
-import {form_save} from "../actions/form";
+import axios from 'axios';
 
 
-const PersonalArea = ({form}) => {
+const PersonalArea = () => {
+    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${1}`;
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
         middle_name: '',
-        job_title: '',
+        vacancy: '',
         email: '',
         phone: '',
-        address: '',
+        additional_address_info: '',
         city: '',
         country: '',
-        date_of_birthday: '',
+        date_of_birth: '',
         photo: '',
         about_me: '',
-        hobbies:''
+        hobbies: ''
     });
     const {
         first_name,
         last_name,
         middle_name,
-        job_title,
+        vacancy,
         city,
         country,
         phone,
-        address,
+        additional_address_info,
         email,
-        date_of_birthday,
+        date_of_birth,
         photo,
         about_me,
         hobbies
     } = formData;
-    const onChange = e => setFormData({...formData, [e.target.name]: e.target.value});
+    const onChange = e =>{setFormData({...formData, [e.target.name]: e.target.value});  console.log(formData)} ;
 
     const onSubmit = (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-        form_save(first_name,
-                last_name,
-                middle_name,
-                job_title,
-                city,
-                country,
-                phone,
-                address,
-                email,
-                date_of_birthday,
-                photo,
-                about_me,
-                hobbies)
+        e.preventDefault();
+        axios.post(url, {
+            first_name:  formData.first_name,
+            last_name: formData.last_name,
+            middle_name: formData.middle_name,
+            vacancy: formData.vacancy,
+            city: formData.city,
+            country: formData.country,
+            phone: formData.phone,
+            additional_address_info: formData.additional_address_info,
+            email: formData.email,
+            date_of_birth: formData.date_of_birth,
+            photo: formData.photo,
+            about_me: formData.about_me,
+            hobbies: formData.hobbies
+        })
+            .then(res => {
+                console.log(res.data)
+            })
     };
 
     return (
@@ -103,7 +107,7 @@ const PersonalArea = ({form}) => {
                     <Form.Control type="text"
                                   placeholder="Wanted Job Title"
                                   name="job_title"
-                                  value={job_title} onChange={e => onChange(e)}
+                                  value={vacancy} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid address.
@@ -135,7 +139,7 @@ const PersonalArea = ({form}) => {
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>Address</Form.Label>
                     <Form.Control type="text" placeholder="Address"
-                                  name="address" value={address} onChange={e => onChange(e)}/>
+                                  name="address" value={additional_address_info} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid address.
                     </Form.Control.Feedback>
@@ -149,14 +153,15 @@ const PersonalArea = ({form}) => {
                 </Form.Group>
                 <Form.Group as={Col} md="3">
                     <Form.Label className='label'>State</Form.Label>
-                    <Form.Control type="text" placeholder="State" name="country" value={country} onChange={e => onChange(e)}/>
+                    <Form.Control type="text" placeholder="State" name="country" value={country}
+                                  onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid state.
                     </Form.Control.Feedback>
                 </Form.Group>
                 <Form.Group as={Col} md="3">
                     <div className="label_small">Date of birthday</div>
-                    <RainbowDatepicker name="date_of_birthday" value={date_of_birthday} onChange={e => onChange(e)}/>
+                    <RainbowDatepicker name="date_of_birthday" value={date_of_birth} onChange={e => onChange(e)}/>
                 </Form.Group>
                 <Form.Group as={Col} className="position-relative mb-34">
                     <Form.Label className='label'>Your Photo</Form.Label>
@@ -261,7 +266,4 @@ const PersonalArea = ({form}) => {
         </Form>
     );
 };
-const mapStateToProps = state => ({
-    isAuthenticated: state.auth.isAuthenticated
-});
-export default connect(mapStateToProps, { form_save })(PersonalArea);
+export default PersonalArea;

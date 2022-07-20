@@ -30,12 +30,14 @@ export const load_form = () => async dispatch => {
         });
     }
 };
-export const form_save = (first_name, last_name, middle_name, job_title, city, country, phone, address, email, date_of_birthday, photo, about_me, hobbies) => async dispatch => {
+export const form_save = (first_name, last_name, middle_name, vacancy, city, country, phone, additional_address_info, email, date_of_birth, photo, about_me, hobbies) => async dispatch => {
     const config = {
         headers: {
             'Content-Type': 'application/json'
         }
     };
+    const id = load_form().map(u => u.id)
+    console.log(id)
 
     const body = JSON.stringify({
         email,
@@ -46,17 +48,15 @@ export const form_save = (first_name, last_name, middle_name, job_title, city, c
         photo,
         country,
         city,
-        address,
-        date_of_birthday,
-        job_title,
+        additional_address_info,
+        date_of_birth,
+        vacancy,
         about_me,
         hobbies
     });
     dispatch(load_form());
     try {
-        const id = load_form().map(u => u.id)
-        console.log(id)
-        const res = await axios.post(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${id}`, body, config);
+        const res = await axios.put(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${id}`, body, config);
 
         dispatch({
             type: FORM_SUCCESS,
