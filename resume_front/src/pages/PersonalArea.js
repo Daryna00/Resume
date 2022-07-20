@@ -11,8 +11,9 @@ import axios from 'axios';
 
 
 const PersonalArea = () => {
-    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${2}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${3}`;
     const [formData, setFormData] = useState({
+        user: '',
         first_name: '',
         last_name: '',
         middle_name: '',
@@ -28,6 +29,7 @@ const PersonalArea = () => {
         hobbies: ''
     });
     const {
+        user,
         first_name,
         last_name,
         middle_name,
@@ -47,6 +49,7 @@ const PersonalArea = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(url, {
+            user: 1,
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
