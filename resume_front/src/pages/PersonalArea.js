@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 
 
-const PersonalArea = ({isAuthenticated}) => {
+const PersonalArea = () => {
     const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${3}/`;
     const [formData, setFormData] = useState({
         user: '',
@@ -70,13 +70,6 @@ const PersonalArea = ({isAuthenticated}) => {
                 console.log(res.data)
             })
     };
-
-    if (isAuthenticated) {
-        return <Redirect to='/personal/area'/>
-    } else {
-        return <Redirect to='/'/>
-    }
-
     return (
         <Form id='formPersonalArea' onSubmit={e => onSubmit(e)} className='form'>
             <Row className="mb-34">
