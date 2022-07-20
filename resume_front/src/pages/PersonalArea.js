@@ -8,10 +8,12 @@ import '../css/personal_area.css'
 // import EmploymentHistory from "../components/EmploymentHistory";
 import RainbowDatepicker from "../components/Date";
 import axios from 'axios';
+import {connect} from "react-redux";
+import {Redirect} from "react-router-dom";
 
 
-const PersonalArea = () => {
-    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${3}`;
+const PersonalArea = ({isAuthenticated}) => {
+    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${3}/`;
     const [formData, setFormData] = useState({
         user: '',
         first_name: '',
@@ -68,6 +70,12 @@ const PersonalArea = () => {
                 console.log(res.data)
             })
     };
+
+    if (isAuthenticated) {
+        return <Redirect to='/personal/area'/>
+    } else {
+        return <Redirect to='/'/>
+    }
 
     return (
         <Form id='formPersonalArea' onSubmit={e => onSubmit(e)} className='form'>
@@ -269,4 +277,7 @@ const PersonalArea = () => {
         </Form>
     );
 };
-export default PersonalArea;
+const mapStateToProps = state => ({
+    isAuthenticated: state.auth.isAuthenticated
+});
+export default connect(mapStateToProps)(PersonalArea);
