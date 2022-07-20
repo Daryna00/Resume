@@ -11,7 +11,7 @@ import axios from 'axios';
 
 
 const PersonalArea = () => {
-    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${1}`;
+    const url = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${2}`;
     const [formData, setFormData] = useState({
         first_name: '',
         last_name: '',
@@ -106,7 +106,7 @@ const PersonalArea = () => {
                     <Form.Label className='label'>Wanted Job Title</Form.Label>
                     <Form.Control type="text"
                                   placeholder="Wanted Job Title"
-                                  name="job_title"
+                                  name="vacancy"
                                   value={vacancy} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -139,7 +139,7 @@ const PersonalArea = () => {
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>Address</Form.Label>
                     <Form.Control type="text" placeholder="Address"
-                                  name="address" value={additional_address_info} onChange={e => onChange(e)}/>
+                                  name="additional_address_info" value={additional_address_info} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid address.
                     </Form.Control.Feedback>
@@ -161,7 +161,7 @@ const PersonalArea = () => {
                 </Form.Group>
                 <Form.Group as={Col} md="3">
                     <div className="label_small">Date of birthday</div>
-                    <RainbowDatepicker name="date_of_birthday" value={date_of_birth} onChange={e => onChange(e)}/>
+                    <RainbowDatepicker name="date_of_birth" value={date_of_birth} onChange={e => onChange(e)}/>
                 </Form.Group>
                 <Form.Group as={Col} className="position-relative mb-34">
                     <Form.Label className='label'>Your Photo</Form.Label>
