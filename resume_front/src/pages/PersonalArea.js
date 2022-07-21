@@ -61,12 +61,11 @@ const PersonalArea = () => {
     } = formData;
     const onChange = e =>{setFormData({...formData, [e.target.name]: e.target.value});  console.log(formData)} ;
 
-    const onGet = e =>{
-        e.preventDefault();
-        axios.get(urlGet[configG])
-            .then(res => {
-                console.log(res.data)
-            })
+    const onGet = async () =>{
+        const response = await
+        axios.get(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/`, configG)
+        console.log(response.data)
+
     };
     const onSubmit = (e) => {
         e.preventDefault();
@@ -101,7 +100,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={first_name} onGet={e => onGet(e.first_name)}
+                        defaultValue={onGet.first_name}
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -113,7 +112,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Last name"
                         name="last_name"
-                        defaultValue={last_name} onGet={e => onGet(e.last_name)}
+                        defaultValue={onGet.last_name}
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -124,7 +123,6 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Middle name"
                         name="middle_name"
-                        defaultValue={middle_name} onGet={e => onGet(e.middle_name)}
                         value={middle_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -134,7 +132,6 @@ const PersonalArea = () => {
                     <Form.Control type="text"
                                   placeholder="Wanted Job Title"
                                   name="vacancy"
-                                  defaultValue={vacancy} onGet={e => onGet(e.vacancy)}
                                   value={vacancy} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -146,7 +143,6 @@ const PersonalArea = () => {
                     <Form.Control type="text"
                                   placeholder="Email"
                                   name="email"
-                                  defaultValue={email} onGet={e => onGet(e.email)}
                                   value={email} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback type="invalid">
@@ -160,7 +156,6 @@ const PersonalArea = () => {
                     <Form.Control type="text" placeholder="Phone"
                                   name="phone"
                                   pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$"
-                                  defaultValue={phone} onGet={e => onGet(e.phone)}
                                   value={phone} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid phone.
@@ -170,7 +165,6 @@ const PersonalArea = () => {
                     <Form.Label className='label'>Address</Form.Label>
                     <Form.Control type="text" placeholder="Address"
                                   name="additional_address_info"
-                                  defaultValue={additional_address_info} onGet={e => onGet(e.additional_address_info)}
                                   value={additional_address_info} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid address.
@@ -179,7 +173,6 @@ const PersonalArea = () => {
                 <Form.Group as={Col} md="6">
                     <Form.Label className='label'>City</Form.Label>
                     <Form.Control type="text" placeholder="City" name="city"
-                                  defaultValue={city} onGet={e => onGet(e.city)}
                                   value={city} onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
                         Please provide a valid city.
@@ -188,7 +181,6 @@ const PersonalArea = () => {
                 <Form.Group as={Col} md="3">
                     <Form.Label className='label'>State</Form.Label>
                     <Form.Control type="text" placeholder="State" name="country"
-                                  defaultValue={country} onGet={e => onGet(e.country)}
                                   value={country}
                                   onChange={e => onChange(e)}/>
                     <Form.Control.Feedback type="invalid">
@@ -205,7 +197,6 @@ const PersonalArea = () => {
                         type="file"
                         name="photo"
                         accept=".png,.jpg"
-                        defaultValue={photo} onGet={e => onGet(e.photo)}
                         value={photo} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback className='label' type="invalid" tooltip>
@@ -217,7 +208,6 @@ const PersonalArea = () => {
                 <Form.Group as={Col} className="mb-34">
                     <Form.Label className='label'>Biography</Form.Label>
                     <Form.Control as="textarea" rows={4} id="controlTextarea00" name="about_me"
-                                  defaultValue={about_me} onGet={e => onGet(e.about_me)}
                                   value={about_me}
                                   onChange={e => onChange(e)}/>
                 </Form.Group>
@@ -226,10 +216,10 @@ const PersonalArea = () => {
                 <Form.Group as={Col} className="mb-34">
                     <Form.Label className='label'>Hobbies</Form.Label>
                     <Form.Control as="textarea" rows={4} id="controlTextarea01" name="hobbies"
-                                  defaultValue={hobbies} onGet={e => onGet(e.hobbies)}
                                   value={hobbies}
                                   onChange={e => onChange(e)}/>
                 </Form.Group>
+                <Button type="submit" onClick={onGet} >Data form</Button>
                 <Button type="submit">Submit form</Button>
             </Row>
             {/*    <Row className="mb-34">*/}
