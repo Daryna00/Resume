@@ -66,12 +66,12 @@ const PersonalArea = () => {
         console.log(onGet().map(e => e.first_name))
     };
     const dataGet = async () =>{
-        const data =await onGet().map(e => (e.first_name, e.last_name, e.middle_name, e.vacancy ))
+        const data =await onGet().map(e => (e.user, e.first_name, e.last_name, e.middle_name, e.vacancy ))
         console.log(data)}
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
-            user:  onGet().map(e => e.user),
+            user:  dataGet().user,
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
@@ -103,7 +103,7 @@ const PersonalArea = () => {
                         placeholder="First name"
                         name="first_name"
                         defaultValue={dataGet.first_name}
-                        value={dataGet.first_name} onChange={e => onChange(e)}
+                        value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
