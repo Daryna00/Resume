@@ -63,9 +63,12 @@ const PersonalArea = () => {
 
     const onGet = async () =>{
         const response = await
-        axios.get(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/`, configG);
+        axios.get(urlGet, configG);
         console.log(response.data)
     };
+    const dataGet = async () =>{
+        const data =await onGet().map(e => e.first_name)
+        console.log(data)}
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
@@ -100,7 +103,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={onGet().map(e => e.first_name)}
+                        defaultValue={dataGet}
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -112,7 +115,6 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Last name"
                         name="last_name"
-                        defaultValue={onGet().map(e => e.last_name)}
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
