@@ -61,17 +61,18 @@ const PersonalArea = () => {
 
     const onGet = async () =>{
         const response = await
-        axios.get(urlGet, configG);
+        axios.get(urlGet, configG).then(res => {
+            const dataG = res.data;
+            this.setState({ dataG });
+        })
+        console.log(this.state.dataG.map(e => e.user)),
         console.log(response.data)
-        console.log(onGet().map(e => e.first_name))
     };
-    const dataGet = async () =>{
-        const data =await onGet().map(e => (e.user, e.first_name, e.last_name, e.middle_name, e.vacancy ))
-        console.log(data)}
+
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
-            user:  dataGet().user,
+            user:  this.state.dataG.map(e => e.user),
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
@@ -102,7 +103,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={dataGet.first_name}
+                        defaultValue={ this.state.dataG.map(e => e.first_name)}
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -114,6 +115,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Last name"
                         name="last_name"
+                        defaultValue={ this.state.dataG.map(e => e.last_name)}
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
