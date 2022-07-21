@@ -40,11 +40,9 @@ const PersonalArea = () => {
     const config = {
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `JWT ${localStorage.getItem('access')}`,
         }
     };
     const {
-        user,
         first_name,
         last_name,
         middle_name,
@@ -65,14 +63,15 @@ const PersonalArea = () => {
         const response = await
         axios.get(urlGet, configG);
         console.log(response.data)
+        console.log(onGet().map(e => e.first_name))
     };
     const dataGet = async () =>{
-        const data =await onGet().map(e => e.first_name)
+        const data =await onGet().map(e => (e.first_name, e.last_name, e.middle_name, e.vacancy ))
         console.log(data)}
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
-            user:  onGet.user,
+            user:  onGet().map(e => e.user),
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
@@ -103,8 +102,8 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={dataGet}
-                        value={first_name} onChange={e => onChange(e)}
+                        defaultValue={dataGet.first_name}
+                        value={dataGet.first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
