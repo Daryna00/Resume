@@ -63,9 +63,8 @@ const PersonalArea = () => {
 
     const onGet = async () =>{
         const response = await
-        axios.get(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/`, configG)
+        axios.get(`${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/`, configG);
         console.log(response.data)
-
     };
     const onSubmit = (e) => {
         e.preventDefault();
@@ -91,6 +90,7 @@ const PersonalArea = () => {
     };
     return (
         <Form id='formPersonalArea' onSubmit={e => onSubmit(e)} className='form'>
+            <Button type="submit" onClick={onGet} >Data form</Button>
             <Row className="mb-34">
                 <div className="big_label">Main information</div>
                 <Form.Group as={Col} md="4">
@@ -100,7 +100,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={onGet.first_name}
+                        defaultValue={onGet().map(e => e.first_name)}
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -112,7 +112,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Last name"
                         name="last_name"
-                        defaultValue={onGet.last_name}
+                        defaultValue={onGet().map(e => e.last_name)}
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -219,7 +219,6 @@ const PersonalArea = () => {
                                   value={hobbies}
                                   onChange={e => onChange(e)}/>
                 </Form.Group>
-                <Button type="submit" onClick={onGet} >Data form</Button>
                 <Button type="submit">Submit form</Button>
             </Row>
             {/*    <Row className="mb-34">*/}
