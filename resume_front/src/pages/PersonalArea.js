@@ -63,6 +63,7 @@ const PersonalArea = () => {
         axios.get(urlGet, configG)
             .then((response)=>{
                 console.log(response);
+                console.log(valueUser);
                 valueUser = response.data;
                 this.setState({ list:response.data.result
                 }).catch((error)=>{
@@ -115,7 +116,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        value={valueUser[0].map((value)=>{return value.user;})} onChange={e => onChange(e)}
+                        value={valueUser.map((value)=>{return value.user;})} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
