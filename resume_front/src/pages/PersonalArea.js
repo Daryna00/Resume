@@ -12,7 +12,7 @@ import {connect} from "react-redux";
 
 
 const PersonalArea = () => {
-    const urlPut = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${3}/`;
+    const urlPut = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/${1}/`;
     const urlGet = `${process.env.REACT_APP_API_URL}/api/v1/resume/main-info/`;
     const [formData, setFormData] = useState({
         user: '',
@@ -59,20 +59,33 @@ const PersonalArea = () => {
     } = formData;
     const onChange = e =>{setFormData({...formData, [e.target.name]: e.target.value});  console.log(formData)} ;
 
+    const state = {list:[]}
     const onGet = async () =>{
-        const response = await
-        axios.get(urlGet, configG).then(res => {
-            const dataG = res.data;
-            this.setState({ dataG });
-        })
-        console.log(this.state.dataG.map(e => e.user)),
-        console.log(response.data)
-    };
+        axios.get(urlGet, configG)
+            .then((response)=>{
+                console.log(response);
+                this.setState({ list:response.data.result
+                })
+                    .catch((error)=>{
+                        console.log(error);
+                    })
+            })
+    }
+    // const onGet = async () =>{
+    //     const response = await
+    //     axios.get(urlGet, configG).then(res => {
+    //         const dataG = res.data;
+    //         this.setState({ dataG });
+    //     });
+    //     console.log(response.data)
+    //     console.log(response.data.results[0])
+    // };
+
 
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
-            user:  this.state.dataG.map(e => e.user),
+            user:  state.list.map((value)=>{return value.user;}),
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
@@ -103,7 +116,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        defaultValue={ this.state.dataG.map(e => e.first_name)}
+                        default={ state.list.map((value)=>{return value.first_name;})}
                         value={first_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
@@ -115,7 +128,6 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="Last name"
                         name="last_name"
-                        defaultValue={ this.state.dataG.map(e => e.last_name)}
                         value={last_name} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
