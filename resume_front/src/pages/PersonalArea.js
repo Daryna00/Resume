@@ -58,15 +58,14 @@ const PersonalArea = () => {
     } = formData;
     const onChange = e =>{setFormData({...formData, [e.target.name]: e.target.value});  console.log(formData)} ;
 
-    const state = {list:[]}
+    let valueUser=[];
     const onGet = async () =>{
         axios.get(urlGet, configG)
             .then((response)=>{
                 console.log(response);
-                console.log(response.data.result.map((value)=>{return value.user;}));
+                valueUser = response.data;
                 this.setState({ list:response.data.result
-                })
-                    .catch((error)=>{
+                }).catch((error)=>{
                         console.log(error);
                     })
             })
@@ -85,7 +84,7 @@ const PersonalArea = () => {
     const onSubmit = (e) => {
         e.preventDefault();
         axios.put(urlPut, {
-            user:  state.list.map((value)=>{return value.user;}),
+            user:  this.state.list.map((value)=>{return value.user;}),
             first_name:  formData.first_name,
             last_name: formData.last_name,
             middle_name: formData.middle_name,
@@ -116,7 +115,7 @@ const PersonalArea = () => {
                         type="text"
                         placeholder="First name"
                         name="first_name"
-                        value={state.list.map((value)=>{return value.first_name;})} onChange={e => onChange(e)}
+                        value={valueUser[0].map((value)=>{return value.user;})} onChange={e => onChange(e)}
                     />
                     <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
                 </Form.Group>
